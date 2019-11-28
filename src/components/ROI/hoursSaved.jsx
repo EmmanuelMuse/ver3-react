@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from '../Header';
-
+import {Link} from 'react-router-dom';
+import {Slider} from '@material-ui/core';
 
 class HoursSaved extends React.Component{
     render(){
         return(
             <>
         <Header page="Hours Saved"/>
-  <div>
+  
   <section className="form">
     <form className="form-box">
       {/* Question 1 */}
@@ -21,8 +22,7 @@ class HoursSaved extends React.Component{
         </button>
       </div>
       <div className="range-slider">
-        <input type="range" min={0} max={20} step={5} defaultValue={0} className="slider" id="myRange" />
-        <h1 id="demo" />
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
       </div>
       <div className="question-divider">
         <span />    
@@ -33,7 +33,7 @@ class HoursSaved extends React.Component{
           and matching gift campaigns?</h1>
       </div>
       <div className="range-slider">
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
       </div>
       <div className="question-divider">
         <span />    
@@ -48,8 +48,8 @@ class HoursSaved extends React.Component{
           Help
         </button>
       </div>
-      <div className="range-slider">                
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
+      <div className="range-slider"> 
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
       </div>
       <div className="question-divider">
         <span />    
@@ -63,21 +63,18 @@ class HoursSaved extends React.Component{
         <span />    
       </div>
       <div className="range-slider">                
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
       </div>
       <div className="nav-button">
-        <a href="dollarsSaved.html">
+        <Link to="DollarsSaved">
           <button type="button" onclick="userInfo()" className="btn btn-primary">Next</button>
-        </a>
+        </Link>
       </div>
     </form>
   </section>
   <div className="progress" style={{width: '55%'}}>
     <div className="progress-bar" role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} style={{width: '25%'}}><label>25%</label></div>
   </div>
-</div>
-
-
             </>
         );
     }

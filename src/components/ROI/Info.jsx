@@ -1,14 +1,12 @@
 import React from 'react';
 import Header from '../Header';
-import {BrowserRouter, Route, Link} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import HoursSaved from './hoursSaved';
 
 class Info extends React.Component{
 render(){
 return(
-  <>
-  <BrowserRouter>
-  <Route path="/Hours Saved" component={HoursSaved}/>
+  <> 
 <Header page="Information Page"/>
 <section className="form">
   <form className="form-box">
@@ -33,13 +31,13 @@ return(
       <input type="tel" className="form-control" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="telNum" />
     </div>
     <div className="nav-button">
-      <Link to="/Hours Saved">
+      <Link exact to="/HoursSaved">
         <button type="button" onclick="userInfo()" className="btn btn-primary">Begin</button>
       </Link>
     </div>
   </form>
 </section>
-</BrowserRouter>
+
 </>
 
 );

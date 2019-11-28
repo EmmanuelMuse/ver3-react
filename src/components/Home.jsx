@@ -1,9 +1,8 @@
 import React from 'react';
 import Header from './Header';
-import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 //import the next page
-import Info from './ROI/Info';
 
 //////ROI icons fundraising management
 import FM from '../imgs/FM.png';
@@ -18,6 +17,7 @@ import CBE from '../imgs/CBE.png';
 //comprehensive data strategy
 import CDS from '../imgs/CDS.png';
 
+
 class Home extends React.Component {
     constructor(props){
         super(props);
@@ -29,14 +29,13 @@ class Home extends React.Component {
   render() {
     return (
       <>
-      <BrowserRouter>
-      <Route exact path = '/Info' component={Info}/>
+     
           <Header page="ROI Calculators"/>
           <section className="calcs">
             <div className="calc-row">
               <div className="calc">
-                <Link to="/Info" className="ROI-icon"><img className="ROI-pic" src={FM} alt="Fundraising"/></Link>
-                <Link to="/Info" className="ROI-type">Fundraising<br/>Management</Link>
+                <Link exact to="/Info" className="ROI-icon"><img className="ROI-pic" src={FM} alt="Fundraising"/></Link>
+                <Link exact to="/Info" className="ROI-type">Fundraising<br/>Management</Link>
               </div>
 
               <div className="calc">
@@ -82,7 +81,7 @@ class Home extends React.Component {
             </div>
 
           </section>
-          </BrowserRouter>
+        
         </>
     );
   }

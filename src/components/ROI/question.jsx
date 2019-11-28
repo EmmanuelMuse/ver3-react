@@ -16,7 +16,7 @@ class Question extends React.Component{
                 </div>
 
                 <div class="range-slider">
-                    <input type="range" min="1" max="8" value="0" class="slider" id="myRange"/>
+                    <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
                 </div>
 
                 <div class="question-divider">
