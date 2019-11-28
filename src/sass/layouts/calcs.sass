@@ -1,0 +1,69 @@
+@import '../abstracts/_abstracts'
+
+section.calcs, section.form
+    position: relative
+    padding: 2rem 0
+    bottom: 15rem
+    @include wrap
+
+div.calc-row
+    width: 100%
+    display: flex
+div.calc
+    height: fit-content
+    flex-basis: 33%
+    display: flex
+    flex-direction: column
+    align-items: center
+    a.ROI-icon
+        transform: scale(1)
+        &:hover
+            transform: scale(1.1)
+   
+    img.ROI-pic
+        height: 85%
+        width: 100%
+        max-width: 27rem
+        max-height: 24rem
+        
+    a.ROI-type, h2.ROI-type
+        text-align: left
+        color: $blue
+        font-size: 1.5rem
+        margin-top: -1.7rem
+div.progress
+    margin: auto
+    position: relative
+    bottom: 15rem
+    margin-bottom: 3rem
+    
+// INFORMATION PAGE
+form.form-box
+    padding: 3rem
+    border-radius: 2rem
+    width: 80vw
+    max-width: 1024px
+    div.form-group
+        input[type="text"], input[type="email"], input[type="number"], input[type="tel"]
+            background-color: $slider-background-green
+
+        label.info-label
+            font-size: 1.8rem
+            color: $blue
+        input
+            margin: .3rem 0
+            padding: 1.5rem
+            font-size: 1.5rem
+            border-radius: 1rem
+
+button.btn-primary
+    font-size: 1.7rem
+    font-weight: bolder
+    padding-left: 2rem
+    @include btn
+div.nav-button
+    padding-top: 3rem
+    margin: 0 auto
+    text-align: center   
+
+   
