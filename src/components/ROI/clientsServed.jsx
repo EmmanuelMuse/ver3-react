@@ -7,7 +7,7 @@ class clientsServed extends React.Component{
         return(
             <>
             <Header page="Clients Served"/>
-          <div>
+          <div className="bg">
   <section className="form">
     <form className="form-box">
       <div className="question-box">

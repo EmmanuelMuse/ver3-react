@@ -1,7 +1,7 @@
 {
+  "homepage": "https://brianapeppers.github.io/ver3-react",
   "name": "ver3r",
   "version": "0.1.0",
-  "homepage": "https://brianapeppers.github.io/ver3-react/",
   "predeploy": "yarn run build",
   "deploy": "gh-pages -d build",
   "private": true,
@@ -16,12 +16,12 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
-    "yarn": "^1.19.2"
+    "yarn": "^1.21.0"
   },
   "scripts": {
-    "start": "react-scripts start",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -40,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }

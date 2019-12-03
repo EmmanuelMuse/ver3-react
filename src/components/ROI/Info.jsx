@@ -8,6 +8,7 @@ render(){
 return(
   <> 
 <Header page="Information Page"/>
+<div className="bg">
 <section className="form">
   <form className="form-box">
     <div className="form-group">
@@ -37,7 +38,7 @@ return(
     </div>
   </form>
 </section>
-
+</div>
 </>
 
 );

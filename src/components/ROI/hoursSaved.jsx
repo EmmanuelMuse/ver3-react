@@ -8,7 +8,7 @@ class HoursSaved extends React.Component{
         return(
             <>
         <Header page="Hours Saved"/>
-  
+  <div className="bg">
   <section className="form">
     <form className="form-box">
       {/* Question 1 */}
@@ -74,6 +74,7 @@ class HoursSaved extends React.Component{
   </section>
   <div className="progress" style={{width: '55%'}}>
     <div className="progress-bar" role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} style={{width: '25%'}}><label>25%</label></div>
+  </div>
   </div>
             </>
         );

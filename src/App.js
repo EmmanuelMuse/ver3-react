@@ -12,7 +12,7 @@ import Results from './components/ROI/results';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="components">
 
         {/* Pages */}
       <Route exact path="/" component={Home}/>

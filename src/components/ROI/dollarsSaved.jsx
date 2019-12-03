@@ -8,7 +8,7 @@ class DollarsSaved extends React.Component{
         return(
             <>
             <Header page="Dollars Saved"/>
-   <div>
+  <div className="bg">
   <section className="form">
     <form className="form-box">
       {/* Question 1 */}
