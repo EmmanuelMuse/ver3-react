@@ -57,7 +57,7 @@ class HoursSaved extends React.Component{
       {/* Question 4 */}
       <div className="question-box">
         <h1 className="question">On average, how many hours are spent monthly on tracking, reporting, and preparing
-          tax reciepts annually?</h1>      
+          tax receipts annually?</h1>      
       </div>
       <div className="question-divider">
         <span />    
