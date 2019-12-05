@@ -22,7 +22,7 @@ const Qs = {
     time3Help:"This includes hours spent managing your grant pipeline, managing/reporting grant deadlines," + ""
     + "hours spent generating and communicating grant reports and hours spent on allocation.",
     
-    time4: "On average, how many hours are spent monthly on tracking, reporting, and preparing tax reciepts annually?" 
+    time4: "On average, how many hours are spent monthly on tracking, reporting, and preparing tax receipts annually?" 
 }
 
 //one state per reducer
