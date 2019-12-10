@@ -15,19 +15,12 @@ const user = {//initial state ~ initState
 }
 
 const results = {
-    value:{
-        hoursSaved: "0",
-        dollarsSaved: "$",
-        clientsServed: "0",
-        cpdr: "0.0"
-    },
-    inputs:{
-        time: 'dg',
-        address:'',
-        dollars: 0,
-        cdr: 0,
-        clients: 0
-    }
+    time: 'dg',
+    money: 0,
+    expenses: 0,
+    revenue: 0,
+    cdr: function(){return this.expenses/this.revenue},
+    clients: 0
 }
 
 // Fundraising Management Questions
@@ -38,12 +31,7 @@ const FMQs = {
     time3: "On average, how many hours are spent monthly on adminstrative work concerning grants?",
     time3Help:"This includes hours spent managing your grant pipeline, managing/reporting grant deadlines," + ""
     + "hours spent generating and communicating grant reports and hours spent on allocation.",
-<<<<<<< HEAD
     time4: "On average, how many hours are spent monthly on tracking, reporting, and preparing tax reciepts annually?" 
-=======
-    
-    time4: "On average, how many hours are spent monthly on tracking, reporting, and preparing tax receipts annually?" 
->>>>>>> 6d6d5923cacd3a19cc5aca9afa44de5947061013
 }
 
 //one state per reducer
@@ -57,16 +45,20 @@ const questionReducer = (state = FMQs, action) =>{
 //manages ROI results
 //results will be updated and then requested then displayed
 const resultReducer = (state = results, action) => {
-    //actions to handle math state.inputs
+    //actions to handle math 
+    switch(action.type){
+        case 'ADD_Time':
+            return{ ...state, time: action.payload + state.time }
+        case 'ADD_Money':
+            return{...state, money: action.payload + state.money }
+        case 'ADD_Expenses':
+            return{...state, expenses: action.payload}
+        case 'ADD_Revenue':
+            return{...state, revenue: action.payload}
+        default:
+            return state;
+    }
 
-
-
-    //actions to displlay state.value
-
-
-
-
-    return state;
 }
 
 //responds to Info componenet

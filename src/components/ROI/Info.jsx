@@ -1,8 +1,12 @@
+//React and Redux stuff
 import React from 'react';
-import Header from '../Header';
-import { Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actions from '../../actions/inputActions';
+
+//imported components
+import Header from '../Header';
+import { Link} from 'react-router-dom';
+
 
 
 class Info extends React.Component{
@@ -19,15 +23,11 @@ return(
   <form className="form-box">
     <div className="form-group">
       <label htmlFor="tbContactName" className="info-label">Contact Name</label>
-<<<<<<< HEAD
       <input  onChange={event => this.props.updateContact(event.target.value)} type="text" className="form-control" id="tbContactName" />
     </div>
     <div className="form-group">
       <label htmlFor="orgName" className="info-label">Organization Name</label>
       <input onChange={event => this.props.updateOrgName(event.target.value)} type="text" className="form-control" id="orgName" />
-=======
-      <input type="text" className="form-control" id="tbContactName" />
->>>>>>> 6d6d5923cacd3a19cc5aca9afa44de5947061013
     </div>
     <div className="form-group">
       {/* change to select type */}
@@ -44,11 +44,7 @@ return(
     </div>
     <div className="form-group">
       <label htmlFor="tel" className="info-label">Phone Number</label>
-<<<<<<< HEAD
       <input type="tel" onChange={event => this.props.updatePhone(event.target.value)} className="form-control" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="telNum" />
-=======
-      <input type="tel" className="form-control" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="telNum" />
->>>>>>> 6d6d5923cacd3a19cc5aca9afa44de5947061013
     </div>
     <div className="nav-button">
       <Link exact to="/HoursSaved">

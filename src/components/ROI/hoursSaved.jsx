@@ -1,4 +1,9 @@
+// React and Redux stuff
 import React from 'react';
+import { connect, bindActionCreators } from 'react-redux';
+import * as actions from '../../actions/mathActions';
+
+// imported componenets
 import Header from '../Header';
 import {Link} from 'react-router-dom';
 import {Slider, Button, Tooltip, Fade} from '@material-ui/core';
@@ -7,10 +12,10 @@ import {Slider, Button, Tooltip, Fade} from '@material-ui/core';
 
 class HoursSaved extends React.Component{
     render(){
-
+          console.log(this.props)
         return(
             <>
-        <Header page="Hours Saved"/>
+  <Header page="Hours Saved"/>
   <div className="bg">
   <section className="form">
     <form className="form-box">
@@ -63,7 +68,12 @@ class HoursSaved extends React.Component{
         </Tooltip>
       </div>
       <div className="range-slider"> 
-        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
+
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}
+        onChange= {(event,value) => this.value = value}
+        onDragStop={ (event) => console.log(event.target.value) }
+        
+        />               
       </div>
       <div className="question-divider">
         <span />    
@@ -95,4 +105,20 @@ class HoursSaved extends React.Component{
     }
 }
 
-export default HoursSaved;
+
+
+const mapStateToProps =(state) =>{
+  return{
+    inputs: state.resultValues
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+      collectTime: (input) => dispatch(actions.collectTime(input))
+    }
+}
+
+
+const HoursContainer = connect(mapStateToProps, mapDispatchToProps)(HoursSaved);
+export default HoursContainer;
