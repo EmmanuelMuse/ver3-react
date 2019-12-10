@@ -15,7 +15,7 @@ const user = {//initial state ~ initState
 }
 
 const results = {
-    time: 'dg',
+    time: 0,
     money: 0,
     expenses: 0,
     revenue: 0,

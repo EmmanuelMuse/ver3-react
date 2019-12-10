@@ -12,6 +12,7 @@ import {Slider, Button, Tooltip, Fade} from '@material-ui/core';
 
 class HoursSaved extends React.Component{
     render(){
+      
           console.log(this.props)
         return(
             <>
@@ -35,7 +36,9 @@ class HoursSaved extends React.Component{
         </Tooltip>
       </div>
       <div className="range-slider">
-        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={1000}
+        onChangeCommitted={ (event, value) => this.props.collectTime(value) }
+        />               
       </div>
       <div className="question-divider">
         <span />    
@@ -46,7 +49,9 @@ class HoursSaved extends React.Component{
           and matching gift campaigns?</h1>
       </div>
       <div className="range-slider">
-        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={1000}
+        onChangeCommitted={ (event, value) => this.props.collectTime(value) }
+        />               
       </div>
       <div className="question-divider">
         <span />    
@@ -69,10 +74,8 @@ class HoursSaved extends React.Component{
       </div>
       <div className="range-slider"> 
 
-        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}
-        onChange= {(event,value) => this.value = value}
-        onDragStop={ (event) => console.log(event.target.value) }
-        
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={1000}
+        onChangeCommitted={ (event, value) => this.props.collectTime(value) }
         />               
       </div>
       <div className="question-divider">
@@ -87,7 +90,9 @@ class HoursSaved extends React.Component{
         <span />    
       </div>
       <div className="range-slider">                
-        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={1000}
+        onChangeCommitted={ (event, value) => this.props.collectTime(value) }
+        />               
       </div>
       <div className="nav-button">
         <Link to="DollarsSaved">
