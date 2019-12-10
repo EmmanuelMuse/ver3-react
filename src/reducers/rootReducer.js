@@ -38,7 +38,12 @@ const FMQs = {
     time3: "On average, how many hours are spent monthly on adminstrative work concerning grants?",
     time3Help:"This includes hours spent managing your grant pipeline, managing/reporting grant deadlines," + ""
     + "hours spent generating and communicating grant reports and hours spent on allocation.",
+<<<<<<< HEAD
     time4: "On average, how many hours are spent monthly on tracking, reporting, and preparing tax reciepts annually?" 
+=======
+    
+    time4: "On average, how many hours are spent monthly on tracking, reporting, and preparing tax receipts annually?" 
+>>>>>>> 6d6d5923cacd3a19cc5aca9afa44de5947061013
 }
 
 //one state per reducer
