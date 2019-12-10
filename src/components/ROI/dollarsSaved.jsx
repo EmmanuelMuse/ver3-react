@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../Header';
+import { Slider, TextField } from '@material-ui/core';
 
 
 class DollarsSaved extends React.Component{
@@ -16,7 +17,7 @@ class DollarsSaved extends React.Component{
         <h1 className="question">On average, how much revenue is generated from donations annually?</h1>
       </div>
       <div className="range-slider">
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>    
       </div>
       <div className="question-divider">
         <span />    
@@ -26,7 +27,7 @@ class DollarsSaved extends React.Component{
         <h1 className="question">On average, what is the value of grant revenue won by your organization?</h1>
       </div>
       <div className="range-slider">
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>    
       </div>
       <div className="question-divider">
         <span />    
@@ -37,7 +38,7 @@ class DollarsSaved extends React.Component{
           (including licensing, hosting, and support fees)?</h1>
       </div>
       <div className="range-slider">
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
+        <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>    
       </div>
       <div className="question-divider">
         <span />    
@@ -46,9 +47,16 @@ class DollarsSaved extends React.Component{
       <div className="question-box">
         <h1 className="question">Annual gross fundraising expenses.</h1>
       </div>
-      <div className="range-slider">
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
-      </div>
+      <TextField
+          id="standard-number"
+          label="Expenses"
+          type="number"
+         
+          InputLabelProps={{
+            shrink: true,
+          }}
+          margin="normal"
+        />
       <div className="question-divider">
         <span />    
       </div>  
@@ -56,9 +64,16 @@ class DollarsSaved extends React.Component{
       <div className="question-box">
         <h1 className="question">Annual gross fundraising revenue.</h1>
       </div>
-      <div className="range-slider">
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
-      </div>
+      <TextField
+          id="standard-number"
+          label="Revenue"
+          type="number"
+        
+          InputLabelProps={{
+            shrink: true,
+          }}
+          margin="normal"
+        />
       <div className="question-divider">
         <span />    
       </div>  

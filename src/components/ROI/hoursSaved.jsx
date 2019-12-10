@@ -1,10 +1,13 @@
 import React from 'react';
 import Header from '../Header';
 import {Link} from 'react-router-dom';
-import {Slider} from '@material-ui/core';
+import {Slider, Button, Tooltip, Fade} from '@material-ui/core';
+
+
 
 class HoursSaved extends React.Component{
     render(){
+
         return(
             <>
         <Header page="Hours Saved"/>
@@ -15,11 +18,16 @@ class HoursSaved extends React.Component{
       <div className="question-box">
         <h1 className="question">On average, how many hours are spent monthly on administrative work concerning
           donations?</h1>
-        <button type="button" className="btn btn-secondary help" data-container="body" data-toggle="popover" data-placement="top" data-content="This includes generating and communicating donation reports, 
-              hours spent tracking and reporting on in-kind donation gifts, reconciling 
-              donations with accounting systems, and hours spent writing thank you letters for donations.">
-          Help
-        </button>
+        <Tooltip
+        TransitionComponent={Fade}
+        TransitionProps={{ timeout: 600 }}
+        arrow="arrow"
+        placement="top"
+        title ={<span style={{fontSize:"1.3rem", lineHeight:"1.5rem"}}>This includes generating and communicating donation reports, 
+        hours spent tracking and reporting on in-kind donation gifts, reconciling 
+        donations with accounting systems, and hours spent writing thank you letters for donations.</span>}>
+          <Button className="help">Help</Button>
+        </Tooltip>
       </div>
       <div className="range-slider">
         <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
@@ -42,11 +50,17 @@ class HoursSaved extends React.Component{
       <div className="question-box">
         <h1 className="question">On average, how many hours are spent monthly on adminstrative work concerning
           grants?</h1>
-        <button type="button" className="btn btn-secondary help" data-container="body" data-toggle="popover" data-placement="top" data-content="This includes hours spent managing your grant pipeline, 
-              managing/reporting grant deadlines, hours spent generating and communicating grant reports 
-              and hours spent on allocation.">
-          Help
-        </button>
+       
+        <Tooltip
+        TransitionComponent={Fade}
+        TransitionProps={{ timeout: 600 }}
+        placement="top"
+        arrow="arrow"
+        title={<span style={{fontSize:"1.3rem", lineHeight:"1.5rem"}}>This includes hours spent managing your grant pipeline, 
+        managing/reporting grant deadlines, hours spent generating and communicating grant reports 
+        and hours spent on allocation.</span>}>
+          <Button className="help" >Help</Button>
+        </Tooltip>
       </div>
       <div className="range-slider"> 
         <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}/>               
@@ -67,7 +81,7 @@ class HoursSaved extends React.Component{
       </div>
       <div className="nav-button">
         <Link to="DollarsSaved">
-          <button type="button" onclick="userInfo()" className="btn btn-primary">Next</button>
+          <button type="button" className="btn btn-primary">Next</button>
         </Link>
       </div>
     </form>

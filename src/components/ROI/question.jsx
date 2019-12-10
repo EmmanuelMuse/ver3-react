@@ -2,6 +2,9 @@ import React from 'react'
 import Slider from '@material-ui/core';
 import {connect} from 'react-redux';
 
+//for code reuse and scalability but time did not permit
+
+
 // this component is connected with the redux store
 //data from the store is mapped from the props
 class Question extends React.Component{
@@ -33,4 +36,4 @@ const mapStateToProps = (state) => {
     }
 
 }
-export default connect(mapStateToProps)(Question);//connect component from redux store
+export default connect(mapStateToProps)(Question);

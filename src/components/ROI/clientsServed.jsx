@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../Header';
+import {TextField} from '@material-ui/core';
+
 
 class clientsServed extends React.Component{
     render(){
@@ -16,26 +18,35 @@ class clientsServed extends React.Component{
       <div className="question-divider">
         <span />
       </div>
-      <div className="range-slider">
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
-      </div>
+      <TextField
+          id="standard-number"
+          label="Budget"
+          type="number"
+         
+          InputLabelProps={{
+            shrink: true,
+          }}
+          margin="normal"
+        />
       <div className="question-divider">
         <span />
       </div>
       <div className="question-box">
-        <h1 className="question">How many unique clients does your organization serve in a year?</h1>
-        <button type="button" className="btn btn-secondary help" data-container="body" data-toggle="popover" data-placement="top" data-content="This includes generating and communicating donation reports, 
-          hours spent tracking and reporting on in-kind donation gifts, reconciling 
-          donations with accounting systems, and hours spent writing thank you letters for donations.">
-          Help
-        </button>
+        <h1 className="question">On average, how many unique clients does your organization serve in a year?</h1>
       </div>
       <div className="question-divider">
         <span />
       </div>
-      <div className="range-slider">
-        <input type="range" min={1} max={8} defaultValue={0} className="slider" id="myRange" />
-      </div>
+      <TextField
+          id="standard-number"
+          label="Unique Clients"
+          type="number"
+         
+          InputLabelProps={{
+            shrink: true,
+          }}
+          margin="normal"
+        />
       <div className="question-divider">
         <span />
       </div>
