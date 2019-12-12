@@ -1,6 +1,10 @@
+//React and Redux stuff
 import React from 'react';
 import Header from '../Header';
 import {connect} from 'react-redux';
+
+//import components
+import {PDFDownloadLink, Document, Page} from '@react-pdf/renderer'
 
 /////result icons
 //Hours Saved
@@ -24,6 +28,36 @@ class Results extends React.Component{
                 <Header page="Results"/>
                     <div>
                         <section className="form">
+                            {/* Row One */}
+                            <h1 className="rHeader">Your current Numbers</h1>
+                            <div className="calc-row">
+                                <div className="calc">
+                                    <img className="ROI-pic" src={HS} alt="Hours Saved" />
+                                    <h2 className="result">??</h2>
+                                    <h2 href="#" className="ROI-type">Hours Spent<br />Annually</h2>
+                                </div>
+
+                                <div className="calc">
+                                    <img className="ROI-pic" src={DS} alt="Dollars Saved" />
+                                    <h2 className="result">??</h2>
+                                    <h2 href="#" className="ROI-type">Dollars Spent<br />Annually</h2>
+                                </div>
+
+                                <div className="calc">
+                                    <img className="ROI-pic" src={CPDR} alt="Cost per Dollar" />
+                                    <h2 className="result">??</h2>
+                                    <h2 href="#" className="ROI-type">Cost per Dollar<br />Raised</h2>
+                                </div>
+
+                                <div className="calc">
+                                    <img className="ROI-pic" src={CS} alt="Clients Served" />
+                                    <h2 className="result">??</h2>
+                                    <h2 href="#" className="ROI-type">Clients Served<br /> Annually</h2>
+                                </div>
+                            </div>
+
+                            {/* Row Two */}
+                            <h1 className="rHeader">ROI 1 Year Results</h1>
                             <div className="calc-row">
                                 <div className="calc">
                                     <img className="ROI-pic" src={HS} alt="Hours Saved" />
