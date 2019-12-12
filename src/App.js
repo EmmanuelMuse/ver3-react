@@ -13,7 +13,7 @@ import Results from './components/ROI/results';
 
 function App() {
   return (
-    <BrowserRouter basename= "/ver3-react/" >
+    <BrowserRouter basename= "/ver3-react" >
       <ScrollToTop>
         {/* Pages */}
       <Route exact path="/" component={Home}/>
