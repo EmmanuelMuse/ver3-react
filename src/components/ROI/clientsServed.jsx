@@ -1,4 +1,9 @@
+//React and Redux Stuff
 import React from 'react';
+import {connect} from 'react-redux';
+import * as actions from '../../actions/mathActions';
+
+//imported components
 import { Link } from 'react-router-dom';
 import Header from '../Header';
 import {TextField} from '@material-ui/core';
@@ -6,6 +11,7 @@ import {TextField} from '@material-ui/core';
 
 class clientsServed extends React.Component{
     render(){
+      console.log(this.props)
         return(
             <>
                 <Header page="Clients Served"/>
@@ -21,7 +27,9 @@ class clientsServed extends React.Component{
                                     label="Budget"
                                     type="number"
                                     InputLabelProps={{ shrink: true }}
-                                    margin="normal"/>
+                                    margin="normal"
+                                    onChange = { (event) => this.props.collectBudget(event.target.value)}
+                                />
                                 <div className="question-divider"><span/></div>
                                 <div className="question-box">
                                     <h1 className="question">On average, how many unique clients does your organization serve in a year?</h1>
@@ -33,6 +41,7 @@ class clientsServed extends React.Component{
                                     type="number"
                                     InputLabelProps={{ shrink: true }}
                                     margin="normal"
+                                    onChange= {(event) => this.props.collectClients(event.target.value)}
                                 />
                                 <div className="question-divider"><span/></div>
                                 <div className="nav-button">
@@ -54,4 +63,14 @@ class clientsServed extends React.Component{
     }
 }
 
-export default clientsServed;
+const mapStateToProps = (state) => {
+    return {inputs: state.resultValues}
+}
+const mapDispatchToProps = (dispatch) => {
+    return{
+        collectBudget: (input) => dispatch(actions.budget(input)),
+        collectClients: (input) => dispatch(actions.clients(input))
+        }
+}
+const ClientContainer = connect(mapStateToProps, mapDispatchToProps)(clientsServed)
+export default ClientContainer;

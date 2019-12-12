@@ -2,7 +2,7 @@ import React from 'react'
 import {Slider, Tooltip, Button, Fade} from '@material-ui/core';
 import {connect} from 'react-redux';
 
-//for code reuse and scalability but time did not permit
+//for code reuse and scalability but time did not permit - under construction
 
 
 // this component is connected with the redux store

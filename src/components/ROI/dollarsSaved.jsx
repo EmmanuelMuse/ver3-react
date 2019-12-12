@@ -31,7 +31,7 @@ class DollarsSaved extends React.Component {
 
                               {/* Question 2 */}
                               <div className="question-box">
-                                <h1 className="question">On average, what is the value of grant revenue won by your organization?</h1>
+                                <h1 className="question">On average, what is the value of grant revenue won by your organization annully?</h1>
                               </div>
                               {/* Slider Two */}
                               <div className="range-slider">
@@ -44,7 +44,7 @@ class DollarsSaved extends React.Component {
                               {/* Question 3 */}
                               <div className="question-box">
                                 <h1 className="question">On average, how much money is spent on fundraising
-                                  management systems annually (including licensing, hosting, and support fees)?</h1>
+                                  management systems annually (including licensing, hosting, and support fees) annually?</h1>
                               </div>
                               {/* Slider Three */}
                               <div className="range-slider">
@@ -112,7 +112,7 @@ const mapDispatchToProps = (dispatch) => {
     collectMoney: (event, id) => dispatch(actions.collectMoney(id, event)),
     collectExpenses: (event) => dispatch(actions.expenses(event)),
     collectRevenue: (event) => dispatch(actions.revenue(event))
-  }
+        }
 }
 
 const DollarsContainer = connect(mapStateToProps, mapDispatchToProps)(DollarsSaved);

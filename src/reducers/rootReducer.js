@@ -15,14 +15,27 @@ var mapT, mapM;
 const results = {
     time: mapT = new Map(),
     hoursSaved: function(){
-        return this.time.reduce((a,b) =>parseInt(a)+parseInt(b),0);
+        var hours = 0;
+        this.time.forEach(function(values){
+            values*=12;//monthy => annual
+            hours += values;
+        })
+        return hours;
     },
     money: mapM = new Map(),
-    dollarsSaved:0,
+    dollarsSaved:function(){
+        var dollars = 0
+        this.money.forEach(function(values){
+            dollars += values;
+        })
+        return dollars;
+    },
     expenses: 0,
     revenue: 0,
-    cdr: function(){return this.expenses/this.revenue},
-    clients: 0
+    cpdr: function(){return this.expenses/this.revenue},
+    clients: 0,
+    budget: 0,
+    clientsServed: function(){return this.budget/this.clients}
 }
 ////////REDUCERS//one state per reducer
 
@@ -38,6 +51,10 @@ const resultReducer = (state = results, action) => {
         case 'ADD_Expenses':
             return{...state, expenses: action.payload}
         case 'ADD_Revenue':
+            return{...state, revenue: action.payload}
+        case 'ADD_Budget':
+            return{...state, budget: action.payload}
+        case 'ADD_UniqueClients':
             return{...state, revenue: action.payload}
         default:
             return state;

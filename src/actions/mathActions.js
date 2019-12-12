@@ -1,4 +1,4 @@
-//Hours Saved Math
+//Hours Saved 
 export const collectTime = (id,event) => {
     console.log(event);
     console.log(id);
@@ -7,7 +7,7 @@ export const collectTime = (id,event) => {
     }
 }
 
-//Dollars Saved Math
+//Dollars Saved 
 export const collectMoney = (id,event) => {
     console.log(event);
     console.log(id);
@@ -16,7 +16,7 @@ export const collectMoney = (id,event) => {
     }
 }
 
-//CDR Math
+//CDR 
 export const expenses = (input) => {
     return{
         type:'ADD_Expenses', payload: input
@@ -28,4 +28,15 @@ export const revenue = (input) => {
     }
 }
 
+//Clients Served 
+export const budget = (input) => {
+    return {
+        type: 'ADD_Budget', payload: input
+    }
+}
 
+export const clients = (input) => {
+    return { 
+        type: 'ADD_UniqueClients', payload: input
+    }
+}
