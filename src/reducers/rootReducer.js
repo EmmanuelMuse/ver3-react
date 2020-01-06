@@ -11,6 +11,7 @@ const user = {//initial state ~ initState
     address:''
    }
 }
+
 var mapT, mapM;
 const results = {
     time: mapT = new Map(),

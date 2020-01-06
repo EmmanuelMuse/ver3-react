@@ -6,10 +6,43 @@ import * as actions from '../../actions/mathActions';
 //imported componenets
 import {Link} from 'react-router-dom';
 import Header from '../Header';
-import {Slider, TextField} from '@material-ui/core';
+import {Slider, TextField, InputAdornment} from '@material-ui/core';
 
 class DollarsSaved extends React.Component {
   render() {
+    //Dollars Saved Ranges for sliders
+    const marks = [
+      {
+        value:1,
+        trueValue: 20000,
+        label: "$0-$20,000"
+      },
+      //25k increment ~ 25% increase
+      {
+        value:2,
+        trueValue: 45000,
+        label:"$20,000-$50,000"
+      },
+      //30k increment ~ 66% increase
+      {
+        value:3,
+        trueValue: 75000,
+        label:"$50,000-$100,000"
+      },
+      //75k increment ~ 100% increase
+      {
+        value:4,
+        trueValue: 150000, 
+        label:"$100,000-$200,000"
+      },
+      //225k increment ~ 150% increase
+      {
+        // value = 375000
+        value:5,
+        trueValue: 375000,
+        label:"$200,000+"
+      }
+    ]
       console.log(this.props)
       return ( 
           <> 
@@ -23,8 +56,11 @@ class DollarsSaved extends React.Component {
                               </div>
                               {/* Slider ONE */}
                               <div className="range-slider">
-                                <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}
-                                onChangeCommitted={ (event, value) => this.props.collectMoney('1',value) }/>
+                                <Slider 
+                                marks={marks} 
+                                step={null} 
+                                min={1} max={5}
+                                onChangeCommitted={ (event, trueValue) => this.props.collectMoney('1',trueValue) }/>
                               </div>
 
                               <div className="question-divider"><span/></div>
@@ -35,8 +71,11 @@ class DollarsSaved extends React.Component {
                               </div>
                               {/* Slider Two */}
                               <div className="range-slider">
-                                <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}
-                                 onChangeCommitted={(event, value) => this.props.collectMoney('2',value)}/>
+                                <Slider 
+                                marks={marks} 
+                                step={null} 
+                                min={1} max={5}
+                                onChangeCommitted={(event, trueValue) => this.props.collectMoney('2',trueValue)}/>
                               </div>
 
                               <div className="question-divider"><span/></div>
@@ -48,8 +87,11 @@ class DollarsSaved extends React.Component {
                               </div>
                               {/* Slider Three */}
                               <div className="range-slider">
-                                <Slider valueLabelDisplay='auto' step={100} min={0} max={100000}
-                                onChangeCommitted={ (event, value) => this.props.collectMoney('3',value)}/>
+                                <Slider 
+                                marks={marks} 
+                                step={null} 
+                                min={1} max={5}
+                                onChangeCommitted={ (event, trueValue) => this.props.collectMoney('3',trueValue)}/>
                               </div>
 
                               <div className="question-divider"><span/></div>
@@ -64,6 +106,7 @@ class DollarsSaved extends React.Component {
                                 type="number"
                                 InputLabelProps={{ shrink: true }}
                                 margin="normal"
+                                variant="filled"
                                 onChange = {(event) => this.props.collectExpenses(event.target.value)}
                               />
 
@@ -79,6 +122,8 @@ class DollarsSaved extends React.Component {
                                 type="number"
                                 InputLabelProps={{ shrink: true }}
                                 margin="normal"
+                                variant="filled"
+                                startAdorment={<InputAdornment position="start">$</InputAdornment>}
                                 onChange = {(event) => this.props.collectRevenue(event.target.value)}
                               />
 

@@ -11,8 +11,33 @@ import {Slider, Button, Tooltip, Fade} from '@material-ui/core';
 
 
 class HoursSaved extends React.Component{
+
     render(){
-      
+      // Hours Saved Ranges for sliders
+      const marks =[
+        {
+          value: 2.5,
+          label: "0-5"
+        },
+        {
+          value: 7.5,
+          label:"5-10"
+        },
+        {
+          value: 12.5,
+          label: "10-15"
+        },
+        {
+          value: 17.5,
+          label: "15-20"
+        },
+        {
+          value: 22.5,
+          label: "20+"
+        }
+
+      ];
+        
           console.log(this.props)
         return(
         <>
@@ -35,15 +60,21 @@ class HoursSaved extends React.Component{
                         <Button className="help">Help</Button>
                     </Tooltip>
                   </div>
+
                   {/* Slider ONE */}
                   <div className="range-slider">
-                    <Slider valueLabelDisplay='auto' step={10} min={0} max={500}
+                    <Slider 
+                    marks={marks}
+                    step={null}
+                    min={0} max={22.5}
                     onChangeCommitted={ (event, value) => this.props.collectTime('1',value) }
                     />               
                   </div>
+
                   <div className="question-divider">
                     <span />    
                   </div>  
+
                   {/* Question 2 */}
                   <div className="question-box">
                     <h1 className="question">On average, how many hours are spent monthly conducting and planning major outreach
@@ -51,9 +82,16 @@ class HoursSaved extends React.Component{
                   </div>
                   {/* Slider TWO */}
                   <div className="range-slider">
-                    <Slider valueLabelDisplay='auto' step={10} min={0} max={500}
+                  <Slider 
+                    // valueLabelDisplay='auto'
+                    // valueLabelFormat={}
+                    // getAriaValueText={this.hourRange()} 
+                    marks={marks}
+                    step={null}
+                    min={0} max={22.5}
                     onChangeCommitted={ (event, value) => this.props.collectTime('2',value) }
-                    />               
+                    /> 
+                                  
                   </div>
                   <div className="question-divider">
                     <span />    
@@ -75,9 +113,15 @@ class HoursSaved extends React.Component{
                   </div>
                   {/* Slider THREE */}
                   <div className="range-slider"> 
-                    <Slider valueLabelDisplay='auto' step={10} min={0} max={500}
+                  <Slider 
+                    // valueLabelDisplay='auto'
+                    // valueLabelFormat={}
+                    // getAriaValueText={this.hourRange()} 
+                    marks={marks}
+                    step={null}
+                    min={0} max={22.5}
                     onChangeCommitted={ (event, value) => this.props.collectTime('3',value) }
-                    />               
+                    />             
                   </div>
                   <div className="question-divider">
                     <span />    
@@ -92,7 +136,13 @@ class HoursSaved extends React.Component{
                   </div>
                   {/* Slider FOUR */}
                   <div className="range-slider">                
-                    <Slider valueLabelDisplay='auto' step={10} min={0} max={500}
+                  <Slider 
+                    // valueLabelDisplay='auto'
+                    // valueLabelFormat={}
+                    // getAriaValueText={this.hourRange()} 
+                    marks={marks}
+                    step={null}
+                    min={0} max={22.5}
                     onChangeCommitted={ (event, value) => this.props.collectTime('4',value) }
                     />               
                   </div>

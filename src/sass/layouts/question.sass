@@ -19,6 +19,14 @@ div.question-box
     span.tip
         font-size: 1rem
 
+.info-box
+    width: 90%
+    margin-bottom: 3rem
+    div.MuiFormControl-root, div.MuiFilledInput-root, div.MuiInput-root
+        width: 100%
+    div.MuiSelect-select
+        font-size: 1.5rem
+
 div.popover-body
     font-size: 1.3rem
 
@@ -41,12 +49,29 @@ div.progress
     .progress-bar
         background-color: $blue
 
+
+////////Material UI Stuff
+
+///Input Boxes
 .MuiFormLabel-root
     font-size: 1.7rem !important
-    color: $blue
+    color: $blue !important
 input.MuiInputBase-input
     font-size: 2rem
     color: $blue !important
-div.MuiFormControl-root
+div.MuiFormControl-root, div.MuiFilledInput-root
     width: 40vw
     color: $blue !important
+    background-color: $slider-background-green !important
+    border-top-left-radius: 1rem
+    border-top-right-radius: 1rem
+div.MuiFormControl-root:hover, div.MuiFilledInput-root:hover
+    background-color: $slider-background-green
+
+//Sliders
+.MuiSlider-root
+    color: $seafoam !important
+.MuiSlider-thumb
+    background-color: $blue !important
+span.MuiSlider-markLabel
+    font-size: 1.3rem

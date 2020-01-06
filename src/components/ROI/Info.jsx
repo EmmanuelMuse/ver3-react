@@ -5,51 +5,114 @@ import * as actions from '../../actions/inputActions';
 
 //imported components
 import Header from '../Header';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { TextField, MenuItem, Select, InputLabel, Input } from '@material-ui/core';
 
 
 
 class Info extends React.Component{
+
 render(){
-  // console.log(this.props);
-  // console.log(actions);
- 
+  const projectTypes = [
+      {
+          Type: "Donor Management System",
+          value: "Donor Management System"
+      },
+      {
+        Type: "Data Strategy",
+        value:"Data Strategy"
+    },
+    {
+        Type:"Client Management System",
+        value:"Client Management System"
+    },
+    {
+        Type:"Grant Managenement System (for foundations)",
+        value:"Grant Management System"
+    },
+    {
+        Type:"Email Management",
+        value:"Email Management"
+    },
+    {
+        Type:"Docuement Collaboration and Storage",
+        value:"Document Collaboration and Storage"
+    }
+  ];
+ console.log(this.props)
 return(
     <> 
         <Header page="Information Page"/>
             <div className="bg">
                 <section className="form">
                     <form className="form-box">
-                        <div className="form-group">
-                            <label htmlFor="tbContactName" className="info-label">Contact Name</label>
-                            <input  onChange={event => this.props.updateContact(event.target.value)} type="text" className="form-control" id="tbContactName" />
+
+                        <div className="info-box">
+                            <TextField 
+                                label="Organization Name" 
+                                variant="filled"
+                                onChange={event => this.props.updateOrgName(event.target.value)} 
+                                type="text"
+                            />
+                        </div>
+                       
+
+
+                        <div className="info-box">
+                            <TextField
+                                label="Organization Address"
+                                variant="filled"
+                                onChange={event => this.props.updateAddress(event.target.value)}
+                                type="text"                        
+                            />
+                        </div>
+                        
+                        
+
+                        {/* change to select */}
+                        <div className="info-box">
+                            <InputLabel>Project Type</InputLabel>
+                            <Select
+                                onChange = {event=> this.props.updateProjType(event.target.value) }
+                            >
+                                <MenuItem value={"Donor Management System"}>Donor Management System</MenuItem>
+                                <MenuItem value={"Data Strategy"}>Data Strategy</MenuItem>
+                                <MenuItem value={"Client Management System"}>Client Management System</MenuItem>
+                                <MenuItem value={"Grants Mangement System"}>Grant Management System (for foundations)</MenuItem>
+                                <MenuItem value={"Email Management"}>Email Management</MenuItem>
+                                <MenuItem value={"Document Collaboration and Storage"}>Document Collaboration Storage</MenuItem>
+                            </Select>
                         </div>
 
-                        <div className="form-group">
-                            <label htmlFor="orgName" className="info-label">Organization Name</label>
-                            <input onChange={event => this.props.updateOrgName(event.target.value)} type="text" className="form-control" id="orgName" />
+                        <div className="info-box">
+                            <TextField
+                                label="Contact Name"
+                                variant='filled'
+                                onChange={event => this.props.updateContact(event.target.value)}
+                                type="text"
+                            />
                         </div>
-
-                        <div className="form-group">
-                            <label htmlFor="projectNum" className="info-label">Project Type</label>
-                            <input onChange={event => this.props.updateProjType(event.target.value)} type="text" className="form-control" id="projectNum" />
+                        
+                        
+                        <div className="info-box">
+                            <TextField
+                                label="Contact Email"
+                                variant='filled'
+                                onChange={event => this.props.updateEmail(event.target.value)}
+                                type="email"
+                            />
                         </div>
+                        
 
-                        <div className="form-group">
-                            <label htmlFor="email" className="info-label">Email Address</label>
-                            <input onChange={event => this.props.updateEmail(event.target.value)} type="email" className="form-control" id="email" aria-describedby="emailHelp" />
+                        <div className="info-box">
+                            <TextField
+                                label="Contact Phone Number"
+                                variant="filled"
+                                onChange={event => this.props.updatePhone(event.target.value)}
+                                type="tel"
+                            />
                         </div>
-
-                        <div className="form-group">
-                            <label htmlFor="email" className="info-label">Address</label>
-                            <input onChange={event => this.props.updateAddress(event.target.value)} type="email" className="form-control" id="email" aria-describedby="emailHelp" />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="tel" className="info-label">Phone Number</label>
-                            <input type="tel" onChange={event => this.props.updatePhone(event.target.value)} className="form-control" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="telNum" />
-                        </div>
-
+                        
                         <div className="nav-button">
                             <Link exact to="/HoursSaved">
                                 <button type="button" className="btn btn-primary">Begin</button>
