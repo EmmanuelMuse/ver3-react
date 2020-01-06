@@ -22,10 +22,15 @@ div.question-box
 .info-box
     width: 90%
     margin-bottom: 3rem
+    padding-top: .5rem
+    border-top-right-radius: 1rem
+    border-top-left-radius: 1rem
+    background-color: $slider-background-green
     div.MuiFormControl-root, div.MuiFilledInput-root, div.MuiInput-root
         width: 100%
     div.MuiSelect-select
         font-size: 1.5rem
+        margin: .5rem
 
 div.popover-body
     font-size: 1.3rem
@@ -57,17 +62,26 @@ div.progress
 .MuiFormLabel-root
     font-size: 1.7rem !important
     color: $blue !important
+    font-family: 'Poppins', sans-serif !important
 input.MuiInputBase-input
     font-size: 2rem
     color: $blue !important
+    font-family: 'Poppins', sans-serif !important
 div.MuiFormControl-root, div.MuiFilledInput-root
     width: 40vw
     color: $blue !important
-    background-color: $slider-background-green !important
-    border-top-left-radius: 1rem
     border-top-right-radius: 1rem
+    border-top-left-radius: 1rem
+    background-color: $slider-background-green !important
+  
 div.MuiFormControl-root:hover, div.MuiFilledInput-root:hover
     background-color: $slider-background-green
+.MuiMenuItem-root
+    font-size: 1.3rem !important
+.MuiSvgIcon-root
+    font-size: 2rem !important
+
+
 
 //Sliders
 .MuiSlider-root
@@ -75,4 +89,4 @@ div.MuiFormControl-root:hover, div.MuiFilledInput-root:hover
 .MuiSlider-thumb
     background-color: $blue !important
 span.MuiSlider-markLabel
-    font-size: 1.3rem
+    font-size: 1.5rem

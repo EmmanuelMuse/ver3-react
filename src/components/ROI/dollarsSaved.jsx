@@ -14,32 +14,32 @@ class DollarsSaved extends React.Component {
     const marks = [
       {
         value:1,
-        trueValue: 20000,
+        // trueValue: 20000,
         label: "$0-$20,000"
       },
       //25k increment ~ 25% increase
       {
         value:2,
-        trueValue: 45000,
+        // trueValue: 45000,
         label:"$20,000-$50,000"
       },
       //30k increment ~ 66% increase
       {
         value:3,
-        trueValue: 75000,
+        // trueValue: 75000,
         label:"$50,000-$100,000"
       },
       //75k increment ~ 100% increase
       {
         value:4,
-        trueValue: 150000, 
+        // trueValue: 150000, 
         label:"$100,000-$200,000"
       },
       //225k increment ~ 150% increase
       {
         // value = 375000
         value:5,
-        trueValue: 375000,
+        // trueValue: 375000,
         label:"$200,000+"
       }
     ]
@@ -60,7 +60,7 @@ class DollarsSaved extends React.Component {
                                 marks={marks} 
                                 step={null} 
                                 min={1} max={5}
-                                onChangeCommitted={ (event, trueValue) => this.props.collectMoney('1',trueValue) }/>
+                                onChangeCommitted={ (event, value) => this.props.collectMoney('1',value) }/>
                               </div>
 
                               <div className="question-divider"><span/></div>
@@ -75,7 +75,7 @@ class DollarsSaved extends React.Component {
                                 marks={marks} 
                                 step={null} 
                                 min={1} max={5}
-                                onChangeCommitted={(event, trueValue) => this.props.collectMoney('2',trueValue)}/>
+                                onChangeCommitted={(event, value) => this.props.collectMoney('2',value)}/>
                               </div>
 
                               <div className="question-divider"><span/></div>
@@ -91,7 +91,7 @@ class DollarsSaved extends React.Component {
                                 marks={marks} 
                                 step={null} 
                                 min={1} max={5}
-                                onChangeCommitted={ (event, trueValue) => this.props.collectMoney('3',trueValue)}/>
+                                onChangeCommitted={ (event, value) => this.props.collectMoney('3',value)}/>
                               </div>
 
                               <div className="question-divider"><span/></div>

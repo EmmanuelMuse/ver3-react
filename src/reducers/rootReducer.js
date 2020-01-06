@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import * as questions from './questionReducer';
+import { Switch } from "@material-ui/core";
 //////////STATES
 const user = {//initial state ~ initState
    ROI:{
@@ -26,17 +27,35 @@ const results = {
     money: mapM = new Map(),
     dollarsSaved:function(){
         var dollars = 0
-        this.money.forEach(function(values){
-            dollars += values;
+        this.money.forEach(function(value){
+            switch(value){
+                case 1:
+                    value = 20000;
+                    break;
+                case 2:
+                    value = 45000;
+                    break;
+                case 3:
+                    value = 75000;
+                    break;
+                case 4:
+                    value = 150000;
+                    break;
+                case 5:
+                    value = 375000;
+                    break;
+                default:
+            }
+            dollars += value;
         })
         return dollars;
     },
     expenses: 0,
     revenue: 0,
-    cpdr: function(){return this.expenses/this.revenue},
+    cpdr: function(){return Math.round(this.expenses/this.revenue)},
     clients: 0,
     budget: 0,
-    clientsServed: function(){return this.budget/this.clients}
+    clientsServed: function(){return Math.round(this.budget/this.clients)}
 }
 ////////REDUCERS//one state per reducer
 
@@ -56,7 +75,7 @@ const resultReducer = (state = results, action) => {
         case 'ADD_Budget':
             return{...state, budget: action.payload}
         case 'ADD_UniqueClients':
-            return{...state, revenue: action.payload}
+            return{...state, clients: action.payload}
         default:
             return state;
     }

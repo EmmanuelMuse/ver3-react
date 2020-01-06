@@ -4,7 +4,7 @@ import Header from '../Header';
 import {connect} from 'react-redux';
 
 //import components
-import {PDFDownloadLink, Document, Page} from '@react-pdf/renderer'
+// import {PDFDownloadLink, Document, Page} from '@react-pdf/renderer'
 
 /////result icons
 //Hours Saved
@@ -67,7 +67,7 @@ class Results extends React.Component{
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={DS} alt="Dollars Saved" />
-                                    <h2 className="result">{display.dollarsSaved()}</h2>
+                                    <h2 className="result">${display.dollarsSaved()}</h2>
                                     <h2 href="#" className="ROI-type">Dollars<br />Saved</h2>
                                 </div>
 

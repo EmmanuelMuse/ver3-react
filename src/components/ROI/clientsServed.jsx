@@ -6,11 +6,58 @@ import * as actions from '../../actions/mathActions';
 //imported components
 import { Link } from 'react-router-dom';
 import Header from '../Header';
-import {TextField} from '@material-ui/core';
+import {TextField, Slider} from '@material-ui/core';
 
 
 class clientsServed extends React.Component{
     render(){
+      const marks =[
+            {
+                value:1,
+                label: "0-100"
+            },
+            {
+                value:2,
+                label: "100-200"
+            },
+            {
+                value:3,
+                label: "200-500"
+            },
+            {
+                value:4,
+                label: "500-1000"
+            },
+            {
+                value:5,
+                label: "1000-5000"
+            },
+            {
+                value:6,
+                label: "5000-10,000"
+            },
+            {
+                value:7,
+                label: "10-20,000"
+            },
+            {
+                value:8,
+                label: "20-30,000"
+            },
+            {
+                value:9,
+                label: "30-40,000"
+            },
+            {
+                value:10,
+                label: "40-50,000"
+            },
+            {
+            value: 11,
+            label: "50,000+"
+            }
+
+        ]
       console.log(this.props)
         return(
             <>
@@ -28,6 +75,7 @@ class clientsServed extends React.Component{
                                     type="number"
                                     InputLabelProps={{ shrink: true }}
                                     margin="normal"
+                                    variant="filled"
                                     onChange = { (event) => this.props.collectBudget(event.target.value)}
                                 />
                                 <div className="question-divider"><span/></div>
@@ -38,10 +86,19 @@ class clientsServed extends React.Component{
                                 <TextField
                                     id="standard-number"
                                     label="Unique Clients"
+                                    
                                     type="number"
                                     InputLabelProps={{ shrink: true }}
                                     margin="normal"
+                                    variant="filled"
                                     onChange= {(event) => this.props.collectClients(event.target.value)}
+                                />
+                                <Slider
+                                
+                                step={null}
+                                marks={marks}
+                                min={1} max={11}
+                                
                                 />
                                 <div className="question-divider"><span/></div>
                                 <div className="nav-button">

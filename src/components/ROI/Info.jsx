@@ -6,39 +6,14 @@ import * as actions from '../../actions/inputActions';
 //imported components
 import Header from '../Header';
 import { Link } from 'react-router-dom';
-import { TextField, MenuItem, Select, InputLabel, Input } from '@material-ui/core';
+import { TextField, MenuItem, Select, InputLabel} from '@material-ui/core';
 
 
 
 class Info extends React.Component{
 
 render(){
-  const projectTypes = [
-      {
-          Type: "Donor Management System",
-          value: "Donor Management System"
-      },
-      {
-        Type: "Data Strategy",
-        value:"Data Strategy"
-    },
-    {
-        Type:"Client Management System",
-        value:"Client Management System"
-    },
-    {
-        Type:"Grant Managenement System (for foundations)",
-        value:"Grant Management System"
-    },
-    {
-        Type:"Email Management",
-        value:"Email Management"
-    },
-    {
-        Type:"Docuement Collaboration and Storage",
-        value:"Document Collaboration and Storage"
-    }
-  ];
+
  console.log(this.props)
 return(
     <> 
@@ -71,7 +46,7 @@ return(
 
                         {/* change to select */}
                         <div className="info-box">
-                            <InputLabel>Project Type</InputLabel>
+                            <InputLabel style={{margin: ".5rem"}} >Project Type</InputLabel>
                             <Select
                                 onChange = {event=> this.props.updateProjType(event.target.value) }
                             >

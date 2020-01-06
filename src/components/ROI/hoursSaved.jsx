@@ -66,7 +66,7 @@ class HoursSaved extends React.Component{
                     <Slider 
                     marks={marks}
                     step={null}
-                    min={0} max={22.5}
+                    min={2.5} max={22.5}
                     onChangeCommitted={ (event, value) => this.props.collectTime('1',value) }
                     />               
                   </div>
@@ -88,7 +88,7 @@ class HoursSaved extends React.Component{
                     // getAriaValueText={this.hourRange()} 
                     marks={marks}
                     step={null}
-                    min={0} max={22.5}
+                    min={2.5} max={22.5}
                     onChangeCommitted={ (event, value) => this.props.collectTime('2',value) }
                     /> 
                                   
@@ -119,7 +119,7 @@ class HoursSaved extends React.Component{
                     // getAriaValueText={this.hourRange()} 
                     marks={marks}
                     step={null}
-                    min={0} max={22.5}
+                    min={2.5} max={22.5}
                     onChangeCommitted={ (event, value) => this.props.collectTime('3',value) }
                     />             
                   </div>
@@ -142,7 +142,7 @@ class HoursSaved extends React.Component{
                     // getAriaValueText={this.hourRange()} 
                     marks={marks}
                     step={null}
-                    min={0} max={22.5}
+                    min={2.5} max={22.5}
                     onChangeCommitted={ (event, value) => this.props.collectTime('4',value) }
                     />               
                   </div>

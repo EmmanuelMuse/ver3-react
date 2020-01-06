@@ -1,7 +1,7 @@
 import React from 'react';
 import './sass/main.sass';
 //react router
-import {BrowserRouter, HashRouter, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top'
 //importing pages for Router
 import Home from './components/Home';
