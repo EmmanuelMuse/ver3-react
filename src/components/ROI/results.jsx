@@ -83,12 +83,14 @@ class Results extends React.Component{
                                 </div>
                             </div>
 
-                            <div className="progress" style={{width: '55%'}}>
+                        </section>
+
+                        
+                        <div className="progress" style={{width: '55%'}}>
                                 <div className="progress-bar" role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} style={{width: '100%'}}><label>Done!</label></div>
-                            </div>
+                        </div>
 
                         {/* PDF Download */}
-                        </section>
                         
                 </>
         );
