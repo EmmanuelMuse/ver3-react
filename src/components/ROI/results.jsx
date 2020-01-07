@@ -26,7 +26,6 @@ class Results extends React.Component{
         return(
             <>
                 <Header page="Results"/>
-                    <div>
                         <section className="calcs">
                             {/* Row One */}
                             {/* <h1 className="rHeader">Your current Numbers</h1> */}
@@ -83,17 +82,14 @@ class Results extends React.Component{
                                     <h2 href="#" className="ROI-type">Clients<br />Served</h2>
                                 </div>
                             </div>
-                        </section>
-                        <div className="progress" style={{width: '55%'}}>
-                            <div className="progress-bar" role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} style={{width: '100%'}}><label>Done!</label></div>
-                        </div>
+
+                            <div className="progress" style={{width: '55%'}}>
+                                <div className="progress-bar" role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} style={{width: '100%'}}><label>Done!</label></div>
+                            </div>
 
                         {/* PDF Download */}
-
-
-
-
-                    </div>
+                        </section>
+                        
                 </>
         );
     }
