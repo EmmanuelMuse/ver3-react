@@ -5,7 +5,11 @@ section.calcs, section.form
     padding: 2rem 0
     bottom: 15rem
     @include wrap
-
+    @media only screen and (max-width: 650px)
+        bottom: 13rem
+    @media only screen and (max-width: 500px)
+        bottom: 15rem
+    
 h1.rHeader
     text-align: center
     padding: 1.5rem 0
@@ -13,6 +17,9 @@ div.calc-row
     width: 100%
     display: flex
     margin: 2rem 0
+    @media only screen and (max-width: 500px)
+        flex-direction: column
+    
     
 div.calc
     height: fit-content
@@ -20,10 +27,20 @@ div.calc
     display: flex
     flex-direction: column
     align-items: center
+    @media only screen and (max-width: 500px)
+        padding-bottom: 10rem
+        margin: auto
+        width: 70%
     a.ROI-icon
         transform: scale(1)
         &:hover
             transform: scale(1.1)
+        @media only screen and (max-width: 500px)
+            transform: scale(1.5)
+            &:hover
+                transform: scale(1.6)
+        
+    
    
     img.ROI-pic
         height: 85%
@@ -70,4 +87,4 @@ div.nav-button
     margin: 0 auto
     text-align: center   
 
-   
+

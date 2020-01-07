@@ -55,7 +55,7 @@ class DollarsSaved extends React.Component {
                                 <h1 className="question">On average, how much revenue is generated from donations monthly?</h1>
                               </div>
                               {/* Slider ONE */}
-                              <div className="range-slider">
+                              <div className="range-slider dollars">
                                 <Slider 
                                 marks={marks} 
                                 step={null} 
@@ -70,7 +70,7 @@ class DollarsSaved extends React.Component {
                                 <h1 className="question">On average, what is the value of grant revenue won by your organization monthly?</h1>
                               </div>
                               {/* Slider Two */}
-                              <div className="range-slider">
+                              <div className="range-slider dollars">
                                 <Slider 
                                 marks={marks} 
                                 step={null} 
@@ -78,7 +78,7 @@ class DollarsSaved extends React.Component {
                                 onChangeCommitted={(event, value) => this.props.collectMoney('2',value)}/>
                               </div>
 
-                              <div className="question-divider"><span/></div>
+                              <div className="question-divider dollars"><span/></div>
 
                               {/* Question 3 */}
                               <div className="question-box">
@@ -86,7 +86,7 @@ class DollarsSaved extends React.Component {
                                   management systems monthly (including licensing, hosting, and support fees)?</h1>
                               </div>
                               {/* Slider Three */}
-                              <div className="range-slider">
+                              <div className="range-slider dollars">
                                 <Slider 
                                 marks={marks} 
                                 step={null} 
