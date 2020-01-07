@@ -93,13 +93,13 @@ class clientsServed extends React.Component{
                                     variant="filled"
                                     onChange= {(event) => this.props.collectClients(event.target.value)}
                                 />
-                                <Slider
+                                {/* <Slider
                                 
                                 step={null}
                                 marks={marks}
                                 min={1} max={11}
                                 
-                                />
+                                /> */}
                                 <div className="question-divider"><span/></div>
                                 <div className="nav-button">
                                     <Link to="/DollarsSaved">

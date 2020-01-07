@@ -51,10 +51,10 @@ const results = {
     },
     expenses: 0,
     revenue: 0,
-    cpdr: function(){return Math.round(this.expenses/this.revenue)},
+    cpdr: function(){return (Math.round(this.expenses/this.revenue))},
     clients: 0,
     budget: 0,
-    clientsServed: function(){return Math.round(this.budget/this.clients)}
+    clientsServed: function(){return (Math.round(this.budget/this.clients))}
 }
 ////////REDUCERS//one state per reducer
 
