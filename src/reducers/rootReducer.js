@@ -1,15 +1,14 @@
 import { combineReducers } from "redux";
 import * as questions from './questionReducer';
-import { Switch } from "@material-ui/core";
 //////////STATES
 const user = {//initial state ~ initState
    ROI:{
-    email: '',
-    contact: '',
-    projectType: '',
     orgName: '',
-    phone: '',
-    address:''
+    orgAddress:'',
+    projectType: '',
+    contactName: '',
+    contactEmail: '',
+    contactPhone: ''
    }
 }
 
@@ -46,7 +45,7 @@ const results = {
                     break;
                 default:
             }
-            dollars += value;
+            dollars += value*12;
         })
         return dollars;
     },
@@ -88,7 +87,7 @@ const infoReducer = (state = user.ROI, action) => {
 //    console.log(action) 
    switch(action.type){
         case 'ADD_Contact':
-            return { ...state, contact: action.payload}
+            return { ...state, contactName: action.payload}
 
         case 'ADD_OrgName':
             return   { ...state, orgName: action.payload}
@@ -97,17 +96,17 @@ const infoReducer = (state = user.ROI, action) => {
             return { ...state, projectType: action.payload}   
 
         case 'ADD_Address':
-            return { ...state, address:action.payload}
+            return { ...state, orgAddress:action.payload}
 
         case 'ADD_Email':
                 //debugging lines
                 // console.log(user)
                 // console.log(state)
-            return { ...state, email:action.payload}
+            return { ...state, contactEmail:action.payload}
         case 'ADD_Phone':
                 // console.log(user) - see if state is updated
                 console.log(state)
-            return { ...state, phone:action.payload}
+            return { ...state, contactPhone:action.payload}
         default:
             return state;
    }

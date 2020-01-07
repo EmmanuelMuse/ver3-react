@@ -15,32 +15,32 @@ class DollarsSaved extends React.Component {
       {
         value:1,
         // trueValue: 20000,
-        label: "$0-$20,000"
+        label: "$0-$20k"
       },
       //25k increment ~ 25% increase
       {
         value:2,
         // trueValue: 45000,
-        label:"$20,000-$50,000"
+        label:"$20k-$50k"
       },
       //30k increment ~ 66% increase
       {
         value:3,
         // trueValue: 75000,
-        label:"$50,000-$100,000"
+        label:"$50k-$100k"
       },
       //75k increment ~ 100% increase
       {
         value:4,
         // trueValue: 150000, 
-        label:"$100,000-$200,000"
+        label:"$100k-$200k"
       },
       //225k increment ~ 150% increase
       {
         // value = 375000
         value:5,
         // trueValue: 375000,
-        label:"$200,000+"
+        label:"$200k+"
       }
     ]
       console.log(this.props)
@@ -52,7 +52,7 @@ class DollarsSaved extends React.Component {
                           <form className="form-box">
                               {/* Question 1 */}
                               <div className="question-box">
-                                <h1 className="question">On average, how much revenue is generated from donations annually?</h1>
+                                <h1 className="question">On average, how much revenue is generated from donations monthly?</h1>
                               </div>
                               {/* Slider ONE */}
                               <div className="range-slider">
@@ -67,7 +67,7 @@ class DollarsSaved extends React.Component {
 
                               {/* Question 2 */}
                               <div className="question-box">
-                                <h1 className="question">On average, what is the value of grant revenue won by your organization annully?</h1>
+                                <h1 className="question">On average, what is the value of grant revenue won by your organization monthly?</h1>
                               </div>
                               {/* Slider Two */}
                               <div className="range-slider">
@@ -83,7 +83,7 @@ class DollarsSaved extends React.Component {
                               {/* Question 3 */}
                               <div className="question-box">
                                 <h1 className="question">On average, how much money is spent on fundraising
-                                  management systems annually (including licensing, hosting, and support fees) annually?</h1>
+                                  management systems monthly (including licensing, hosting, and support fees)?</h1>
                               </div>
                               {/* Slider Three */}
                               <div className="range-slider">

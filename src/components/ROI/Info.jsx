@@ -14,14 +14,13 @@ class Info extends React.Component{
 
 render(){
 
- console.log(this.props)
+console.log(this.props)
 return(
     <> 
         <Header page="Information Page"/>
             <div className="bg">
                 <section className="form">
                     <form className="form-box">
-
                         <div className="info-box">
                             <TextField 
                                 label="Organization Name" 
@@ -50,6 +49,9 @@ return(
                             <Select
                                 onChange = {event=> this.props.updateProjType(event.target.value) }
                             >
+                                {/* <MenuItem value="">
+                                    <em>Select Project Type</em>
+                                </MenuItem> */}
                                 <MenuItem value={"Donor Management System"}>Donor Management System</MenuItem>
                                 <MenuItem value={"Data Strategy"}>Data Strategy</MenuItem>
                                 <MenuItem value={"Client Management System"}>Client Management System</MenuItem>
@@ -102,9 +104,9 @@ return(
 }
 
 
-const mapStateToProps =(state) =>{
+const mapStateToProps = (state) =>{
   return{
-    ROI: state.userInfo.ROI
+    ROI: state.userInfo
   }
 }
 

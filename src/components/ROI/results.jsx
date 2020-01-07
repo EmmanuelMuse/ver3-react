@@ -27,9 +27,9 @@ class Results extends React.Component{
             <>
                 <Header page="Results"/>
                     <div>
-                        <section className="form">
+                        <section className="calcs">
                             {/* Row One */}
-                            <h1 className="rHeader">Your current Numbers</h1>
+                            {/* <h1 className="rHeader">Your current Numbers</h1> */}
                             <div className="calc-row">
                                 <div className="calc">
                                     <img className="ROI-pic" src={HS} alt="Hours Saved" />

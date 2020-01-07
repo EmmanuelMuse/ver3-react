@@ -26,35 +26,35 @@ class clientsServed extends React.Component{
             },
             {
                 value:4,
-                label: "500-1000"
+                label: "500-1k"
             },
             {
                 value:5,
-                label: "1000-5000"
+                label: "1k-5k"
             },
             {
                 value:6,
-                label: "5000-10,000"
+                label: "5k-10k"
             },
             {
                 value:7,
-                label: "10-20,000"
+                label: "10k-20k"
             },
             {
                 value:8,
-                label: "20-30,000"
+                label: "20k-30k"
             },
             {
                 value:9,
-                label: "30-40,000"
+                label: "30k-40k"
             },
             {
                 value:10,
-                label: "40-50,000"
+                label: "40k-50k"
             },
             {
             value: 11,
-            label: "50,000+"
+            label: "50k+"
             }
 
         ]

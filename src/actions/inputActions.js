@@ -1,8 +1,8 @@
 //actions must be dispatched to the reducer -> they are dispatched within components
 /////ACTIONS
-//type = what the action does
+//type = what the action does -> action identifer
+    //used in switch statement
 //payload = return value
-
 
 ///Input Actions
 export const updateContact = (input) => {
@@ -27,6 +27,3 @@ export const updateEmail = (input) => {
 export const updateAddress = (input) => {
     return{ type:'ADD_Address', payload: input }
 }
-   
-
-// Calculation Actions
