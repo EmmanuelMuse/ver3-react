@@ -91,6 +91,7 @@ class DollarsSaved extends React.Component {
                                 marks={marks} 
                                 step={null} 
                                 min={1} max={5}
+                                
                                 onChangeCommitted={ (event, value) => this.props.collectMoney('3',value)}/>
                               </div>
 
