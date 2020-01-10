@@ -20,6 +20,7 @@ class Chart extends Component{
                     borderWidth:1,
                     borderColor:'#777',
                     hoverBorderWidth:3,
+                    hoverBackgroundColor: ['#DA4167', '#DA4167', '#DA4167', '#DA4167'],
                     hoverBorderColor:'#000'
                     },
                     //After label bars
@@ -29,6 +30,7 @@ class Chart extends Component{
                     borderWidth:1,
                     borderColor:'#777',
                     hoverBorderWidth:3,
+                    hoverBackgroundColor: ['#083D77', '#083D77', '#083D77', '#083D77'],
                     hoverBorderColor:'#000',                   
                     }
                    

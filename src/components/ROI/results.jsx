@@ -24,6 +24,7 @@ class Results extends React.Component{
         console.log(this.props)
         const {display} = this.props;
         console.log(display.hoursSaved())
+        console.log(display.cpdr())
         return(
             <>
                 <Header page="Results" />
@@ -85,11 +86,26 @@ class Results extends React.Component{
                             </div>
 
                         </section>
+<<<<<<< HEAD
                         <Chart
                             name={"Hours Saved"}
                             value={display.hoursSaved()}
+=======
+                        <Chart 
+
+>>>>>>> f1651dfcb1afeed956de7e5660209aaac9d92601
                         />
                        
+                        
+                        <Chart valueProp = {display}
+                                nameProp = {'Dollars Saved'}        
+                        />
+                       <Chart valueProp = {display}
+                            nameProp = {'Cost Per Dollar Raised'}        
+                        />
+                        <Chart valueProp = {display}
+                            nameProp = {'Clients Served'}        
+                        />
                         
                 </>
         );
