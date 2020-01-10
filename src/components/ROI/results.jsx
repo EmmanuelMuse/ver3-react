@@ -26,7 +26,7 @@ class Results extends React.Component{
         console.log(display.hoursSaved())
         return(
             <>
-                <Header page="Results"/>
+                <Header page="Results" />
                         <section className="calcs">
                             {/* Row One */}
                             {/* <h1 className="rHeader">Your current Numbers</h1> */}
@@ -85,7 +85,10 @@ class Results extends React.Component{
                             </div>
 
                         </section>
-                        <Chart/>
+                        <Chart
+                            name={"Hours Saved"}
+                            value={display.hoursSaved()}
+                        />
                        
                         
                 </>
