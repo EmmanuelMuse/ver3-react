@@ -6,58 +6,12 @@ import * as actions from '../../actions/mathActions';
 //imported components
 import { Link } from 'react-router-dom';
 import Header from '../Header';
-import {TextField, Slider} from '@material-ui/core';
+import {TextField} from '@material-ui/core';
 
 
 class clientsServed extends React.Component{
     render(){
-      const marks =[
-            {
-                value:1,
-                label: "0-100"
-            },
-            {
-                value:2,
-                label: "100-200"
-            },
-            {
-                value:3,
-                label: "200-500"
-            },
-            {
-                value:4,
-                label: "500-1k"
-            },
-            {
-                value:5,
-                label: "1k-5k"
-            },
-            {
-                value:6,
-                label: "5k-10k"
-            },
-            {
-                value:7,
-                label: "10k-20k"
-            },
-            {
-                value:8,
-                label: "20k-30k"
-            },
-            {
-                value:9,
-                label: "30k-40k"
-            },
-            {
-                value:10,
-                label: "40k-50k"
-            },
-            {
-            value: 11,
-            label: "50k+"
-            }
 
-        ]
       console.log(this.props)
         return(
             <>
@@ -93,13 +47,7 @@ class clientsServed extends React.Component{
                                     variant="filled"
                                     onChange= {(event) => this.props.collectClients(event.target.value)}
                                 />
-                                {/* <Slider
-                                
-                                step={null}
-                                marks={marks}
-                                min={1} max={11}
-                                
-                                /> */}
+                            
                                 <div className="question-divider"><span/></div>
                                 <div className="nav-button">
                                     <Link to="/DollarsSaved">
