@@ -131,8 +131,10 @@ class Results extends React.Component{
                     <Chart chartData={this.state.chartData} 
                     />
                     <Chart 
+                    // Graph example where realtime adjustments are shown. I'll edit the other 3 graphs in a similar fashion on Saturday
+                    // Need to rewrite prop for graph title as well. Both currently show as "Results"
                     chartData={{
-                        labels: ['Graph2'],
+                        labels: ['Realtime Bar Example'],
                         datasets: [
                             //Before label bars
                             {label:'Before',
