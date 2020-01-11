@@ -51,7 +51,7 @@ const results = {
     },
     expenses: 0,
     revenue: 0,
-    cpdr: function(){return ((this.expenses/this.revenue).toFixed(2))},
+    cpdr: function(){return (parseFloat((this.expenses/this.revenue).toFixed(2)))},
     clients: 0,
     budget: 0,
     clientsServed: function(){return (Math.round(this.budget/this.clients))}

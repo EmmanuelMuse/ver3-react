@@ -1,7 +1,7 @@
 //React and Redux stuff
 import React from 'react';
 import Header from '../Header';
-import {connect} from 'react-redux';
+import {connect, useStore} from 'react-redux';
 
 //import components
 // import {PDFDownloadLink, Document, Page} from '@react-pdf/renderer'
@@ -20,6 +20,48 @@ import CS from '../../imgs/CS.png';
 
 
 class Results extends React.Component{
+    
+    constructor(props){
+        super(props);
+        this.state = {
+            chartData:{}
+        }
+        
+    }
+
+    componentWillMount(){
+        this.getChartData();
+    }
+    getChartData(){
+        this.setState({
+            chartData:{
+                labels: ['Graph1'],
+                datasets: [
+                    //Before label bars
+                    {label:'Before',
+                    data: [2, 0],
+                    backgroundColor:['#DA4167'],
+                    borderWidth:1,
+                    borderColor:'#777',
+                    hoverBorderWidth:3,
+                    hoverBackgroundColor: ['#DA4167'],
+                    hoverBorderColor:'#000'
+                    },
+                    //After label bars
+                    {label:'After',
+                    data: [.5],
+                    backgroundColor:['#083D77'],
+                    borderWidth:1,
+                    borderColor:'#777',
+                    hoverBorderWidth:3,
+                    hoverBackgroundColor: ['#083D77'],
+                    hoverBorderColor:'#000'                   
+                    }
+                ]
+            }
+        });
+    }
+
     render(){
         console.log(this.props)
         const {display} = this.props;
@@ -86,21 +128,37 @@ class Results extends React.Component{
                             </div>
 
                         </section>
-                        <Chart 
-
-                        />
-                       
-                        
-                        <Chart valueProp = {display}
-                                nameProp = {'Dollars Saved'}        
-                        />
-                       <Chart valueProp = {display}
-                            nameProp = {'Cost Per Dollar Raised'}        
-                        />
-                        <Chart valueProp = {display}
-                            nameProp = {'Clients Served'}        
-                        />
-                        
+                    <Chart chartData={this.state.chartData} 
+                    />
+                    <Chart 
+                    chartData={{
+                        labels: ['Graph2'],
+                        datasets: [
+                            //Before label bars
+                            {label:'Before',
+                            data: [display.cpdr(), 0],
+                            backgroundColor:['#DA4167'],
+                            borderWidth:1,
+                            borderColor:'#777',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#DA4167'],
+                            hoverBorderColor:'#000'
+                            },
+                            //After label bars
+                            {label:'After',
+                            data: [.5],
+                            backgroundColor:['#083D77'],
+                            borderWidth:1,
+                            borderColor:'#777',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#083D77'],
+                            hoverBorderColor:'#000'                   
+                            }
+                        ]
+                    }}
+                    />
+                
+                              
                 </>
         );
     }
