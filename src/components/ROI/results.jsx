@@ -33,6 +33,10 @@ class Results extends React.Component{
         this.getChartData();
     }
 
+    currencyFormat(num) {
+        return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+
     getChartData(){
         this.setState({
             chartData:{
@@ -69,13 +73,15 @@ class Results extends React.Component{
         });
     }
 
+
     render(){
         console.log(this.props)
         const {display} = this.props;
-
+        console.log(display.dollarsSaved())
         return(
             <>
-                <Header page="Results"/>
+                <Header page="Results" />
+                        
                         <section className="calcs">
                             {/* Row One */}
                             {/* <h1 className="rHeader">Your current Numbers</h1> */}
@@ -116,7 +122,7 @@ class Results extends React.Component{
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={DS} alt="Dollars Saved" />
-                                    <h2 className="result">${display.dollarsSaved()}</h2>
+                                    <h2 className="result">${(display.dollarsSaved().toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'))}</h2>
                                     <h2 href="#" className="ROI-type">Dollars<br />Saved</h2>
                                 </div>
 
@@ -262,6 +268,15 @@ class Results extends React.Component{
                         ]
                     }}
                     />
+
+                    <div class="nav-button">
+                        <a href="#" download="">
+                            <button type="button"  onClick="window.print();" class="btn btn-primary">Print Results</button>
+                        </a>
+                        <div class="question-divider">
+                            <span></span>
+                        </div>
+                    </div>
                 
                               
                 </>
