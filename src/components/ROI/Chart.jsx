@@ -20,17 +20,34 @@ class Chart extends React.Component{
                 <Bar
                 data={this.state.chartData}
                 options={{
+                    scales: {
+                        yAxes: [{
+                            display:true,
+                            ticks: {
+                                fontSize: 15,
+                                fontColor:'#363537',
+                                min: 0,                        
+                            }
+                        }],
+                        xAxes:[{
+                            ticks:{
+                                fontSize: 16,
+                                fontColor: '363537' 
+                            }
+                        }]
+                    },    
                     title:{
                       display:true,
-                      text:'Results',
-                      fontSize:27,
+                      text: 'Results',
+                      fontSize:25,
                       fontColor:'#363537'
                     },
                     legend:{
                       display:true,
                       position:'bottom',
                       labels:{
-                        fontColor:'#363537'
+                        fontColor:'#363537',
+                        fontSize: 13
                       }
                     }
                 }}

@@ -32,6 +32,7 @@ class Results extends React.Component{
     componentWillMount(){
         this.getChartData();
     }
+
     getChartData(){
         this.setState({
             chartData:{
@@ -39,25 +40,31 @@ class Results extends React.Component{
                 datasets: [
                     //Before label bars
                     {label:'Before',
-                    data: [2, 0],
-                    backgroundColor:['#DA4167'],
+                    data: [6,0],
+                    backgroundColor:['#083D77'],
+                    barPercentage: .25,
+                    categoryPercentage: .8,
+                    maxBarThickness: .8,
                     borderWidth:1,
-                    borderColor:'#777',
+                    borderColor:'#212121',
                     hoverBorderWidth:3,
-                    hoverBackgroundColor: ['#DA4167'],
+                    hoverBackgroundColor: ['#083D77'],
                     hoverBorderColor:'#000'
                     },
                     //After label bars
                     {label:'After',
-                    data: [.5],
-                    backgroundColor:['#083D77'],
+                    data: [4],
+                    backgroundColor:['#7ec142'],
+                    barPercentage: .2,
+                    categoryPercentage: .5,
+                    maxBarThickness: .3,
                     borderWidth:1,
-                    borderColor:'#777',
+                    borderColor:'#212121',
                     hoverBorderWidth:3,
-                    hoverBackgroundColor: ['#083D77'],
+                    hoverBackgroundColor: ['#7ec142'],
                     hoverBorderColor:'#000'                   
                     }
-                ]
+                ]                
             }
         });
     }
@@ -65,8 +72,7 @@ class Results extends React.Component{
     render(){
         console.log(this.props)
         const {display} = this.props;
-        console.log(display.hoursSaved())
-        console.log(display.cpdr())
+
         return(
             <>
                 <Header page="Results"/>
@@ -128,32 +134,133 @@ class Results extends React.Component{
                             </div>
 
                         </section>
-                    <Chart chartData={this.state.chartData} 
-                    />
+                    {/* Hours Saved Results Graph */}
                     <Chart 
                     // Graph example where realtime adjustments are shown. I'll edit the other 3 graphs in a similar fashion on Saturday
                     // Need to rewrite prop for graph title as well. Both currently show as "Results"
                     chartData={{
-                        labels: ['Realtime Bar Example'],
+                        labels: ['Hours Saved'],
+                        datasets: [
+                            //Before label bars
+                            {label:'Hours: Before',
+                            data: [parseInt(display.hoursSaved()*Math.random())],
+                            backgroundColor:['#083D77'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#083D77'],
+                            hoverBorderColor:'#000'
+                            },
+                            //After label bars
+                            {label:'Hours: After',
+                            data: [display.hoursSaved()],
+                            backgroundColor:['#7ec142'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#7ec142'],
+                            hoverBorderColor:'#000'                   
+                            }
+                        ]
+                    }}
+                    />
+                    {/* Dollars Saved Results Graph */}
+                    <Chart 
+                    chartData={{
+                        labels: ['Dollars Saved'],
                         datasets: [
                             //Before label bars
                             {label:'Before',
-                            data: [display.cpdr(), 0],
-                            backgroundColor:['#DA4167'],
+                            data: [parseInt(display.dollarsSaved()*(Math.random())), 0],
+                            backgroundColor:['#083D77'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
                             borderWidth:1,
-                            borderColor:'#777',
+                            borderColor:'#212121',
                             hoverBorderWidth:3,
-                            hoverBackgroundColor: ['#DA4167'],
+                            hoverBackgroundColor: ['#083D77'],
                             hoverBorderColor:'#000'
                             },
                             //After label bars
                             {label:'After',
-                            data: [.5],
-                            backgroundColor:['#083D77'],
+                            data: [display.dollarsSaved()],
+                            backgroundColor:['#7ec142'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
                             borderWidth:1,
-                            borderColor:'#777',
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#7ec142'],
+                            hoverBorderColor:'#000'                   
+                            }
+                        ]
+                    }}
+                    />
+
+                    <Chart 
+                    // Graph example where realtime adjustments are shown. I'll edit the other 3 graphs in a similar fashion on Saturday
+                    // Need to rewrite prop for graph title as well. Both currently show as "Results"
+                    chartData={{
+                        labels: ['Cost Per Dollar Raised'],
+                        datasets: [
+                            //Before label bars
+                            {label:'CPD: Before',
+                            data: [parseFloat(display.cpdr()*(Math.random())).toFixed(2), 0],
+                            backgroundColor:['#083D77'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
                             hoverBorderWidth:3,
                             hoverBackgroundColor: ['#083D77'],
+                            hoverBorderColor:'#000'
+                            },
+                            //After label bars
+                            {label:'CPD: After',
+                            data: [display.cpdr()],
+                            backgroundColor:['#7ec142'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#7ec142'],
+                            hoverBorderColor:'#000'                   
+                            }
+                        ]
+                    }}
+                    />
+
+                    <Chart 
+                    chartData={{
+                        labels: ['Clients Served'],
+                        datasets: [
+                            //Before label bars
+                            {label:'Before',
+                            data: [parseInt(display.clientsServed()*(Math.random())).toFixed(2), 0],
+                            backgroundColor:['#083D77'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#083D77'],
+                            hoverBorderColor:'#000'
+                            },
+                            //After label bars
+                            {label:'After',
+                            data: [display.clientsServed()],
+                            backgroundColor:['#7ec142'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#7ec142'],
                             hoverBorderColor:'#000'                   
                             }
                         ]
