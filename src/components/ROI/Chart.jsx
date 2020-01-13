@@ -20,6 +20,7 @@ class Chart extends React.Component{
                 <Bar
                 data={this.state.chartData}
                 options={{
+                    responsive: true,
                     scales: {
                         yAxes: [{
                             display:true,
@@ -47,7 +48,7 @@ class Chart extends React.Component{
                       position:'bottom',
                       labels:{
                         fontColor:'#363537',
-                        fontSize: 13
+                        fontSize: 14
                       }
                     }
                 }}
