@@ -136,8 +136,6 @@ class Results extends React.Component{
                         </section>
                     {/* Hours Saved Results Graph */}
                     <Chart 
-                    // Graph example where realtime adjustments are shown. I'll edit the other 3 graphs in a similar fashion on Saturday
-                    // Need to rewrite prop for graph title as well. Both currently show as "Results"
                     chartData={{
                         labels: ['Hours Saved'],
                         datasets: [
@@ -200,10 +198,8 @@ class Results extends React.Component{
                         ]
                     }}
                     />
-
-                    <Chart 
-                    // Graph example where realtime adjustments are shown. I'll edit the other 3 graphs in a similar fashion on Saturday
-                    // Need to rewrite prop for graph title as well. Both currently show as "Results"
+                    {/* Cost Per Dollar Results Graph */}
+                    <Chart                
                     chartData={{
                         labels: ['Cost Per Dollar Raised'],
                         datasets: [
@@ -234,7 +230,7 @@ class Results extends React.Component{
                         ]
                     }}
                     />
-
+                    {/* Clients Served Results Graph */}
                     <Chart 
                     chartData={{
                         labels: ['Clients Served'],
