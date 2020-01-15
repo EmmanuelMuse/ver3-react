@@ -6,7 +6,7 @@ import * as actions from '../../actions/inputActions';
 //imported components
 import Header from '../Header';
 import { Link } from 'react-router-dom';
-import { TextField, MenuItem, Select, InputLabel} from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 
 
 
@@ -39,26 +39,6 @@ return(
                                 onChange={event => this.props.updateAddress(event.target.value)}
                                 type="text"                        
                             />
-                        </div>
-                        
-                        
-
-                        {/* change to select */}
-                        <div className="info-box">
-                            <InputLabel style={{margin: ".5rem"}} >Project Type</InputLabel>
-                            <Select
-                                onChange = {event=> this.props.updateProjType(event.target.value) }
-                            >
-                                {/* <MenuItem value="">
-                                    <em>Select Project Type</em>
-                                </MenuItem> */}
-                                <MenuItem value={"Donor Management System"}>Donor Management System</MenuItem>
-                                <MenuItem value={"Data Strategy"}>Data Strategy</MenuItem>
-                                <MenuItem value={"Client Management System"}>Client Management System</MenuItem>
-                                <MenuItem value={"Grants Mangement System"}>Grant Management System (for foundations)</MenuItem>
-                                <MenuItem value={"Email Management"}>Email Management</MenuItem>
-                                <MenuItem value={"Document Collaboration and Storage"}>Document Collaboration Storage</MenuItem>
-                            </Select>
                         </div>
 
                         <div className="info-box">

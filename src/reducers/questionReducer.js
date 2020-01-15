@@ -11,11 +11,10 @@ export const FMQs = {
 }
 
 //Program Management Questions
-export const PMQs ={}
+export const PMQs = {}
 
 //Cloud-Based Document Storage
-export const CBDSQs ={}
-
+export const CBDSQs = {}
 
 //Grant Management
 export const GMQs = {}

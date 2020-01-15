@@ -45,7 +45,7 @@ const results = {
                     break;
                 default:
             }
-            dollars += value*12;
+            dollars += value;
         })
         return dollars;
     },

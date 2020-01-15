@@ -5,8 +5,7 @@ import {connect} from 'react-redux';
 
 //import components
 // import {PDFDownloadLink, Document, Page} from '@react-pdf/renderer'
-import Chart from '../ROI/Chart';
-
+import Chart from './features/Chart';
 /////result icons
 //Hours Saved
 import HS from '../../imgs/HS.png';
@@ -86,17 +85,12 @@ class Results extends React.Component{
                             </div>
 
                         </section>
-<<<<<<< HEAD
                         <Chart
                             name={"Hours Saved"}
                             value={display.hoursSaved()}
-=======
-                        <Chart 
-
->>>>>>> f1651dfcb1afeed956de7e5660209aaac9d92601
                         />
                        
-                        
+{/*                         
                         <Chart valueProp = {display}
                                 nameProp = {'Dollars Saved'}        
                         />
@@ -105,7 +99,7 @@ class Results extends React.Component{
                         />
                         <Chart valueProp = {display}
                             nameProp = {'Clients Served'}        
-                        />
+                        /> */}
                         
                 </>
         );

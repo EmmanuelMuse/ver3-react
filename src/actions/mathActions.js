@@ -1,7 +1,5 @@
 //Hours Saved 
 export const collectTime = (id,event) => {
-    console.log(event);
-    console.log(id);
     return {
         type: 'ADD_Time', payload: event, id
     }
@@ -9,8 +7,7 @@ export const collectTime = (id,event) => {
 
 //Dollars Saved 
 export const collectMoney = (id,event) => {
-    console.log(event);
-    console.log(id);
+   
     return{
         type: 'ADD_Money',  payload: event, id
     }

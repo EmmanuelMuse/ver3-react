@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Bar} from 'react-chartjs-2';
 import {connect} from 'react-redux';
-import * as actions from '../../actions/mathActions';
+import * as actions from '../../../actions/mathActions';
 
 
 
@@ -41,6 +41,9 @@ class Chart extends Component{
     }
 
     render(){
+
+        const {chartProp} = this.props;
+        console.log(chartProp);
         return(
             <div className="chart">
                 <Bar
@@ -48,7 +51,7 @@ class Chart extends Component{
                 options={{
                     title:{
                       display:true,
-                      text:'Results',
+                      text: "",
                       fontSize:27,
                       fontColor:'#363537'
                     },
