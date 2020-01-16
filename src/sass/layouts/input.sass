@@ -1,4 +1,16 @@
 @import '../abstracts/_abstracts'
+
+
+// Styling for Questions, Input Boxes,
+// Sliders, Modals, and Progress Bar
+
+// Components using the styles:
+    // hoursSaved
+    // dollarSaved
+    // clientsServed
+    // Info
+
+//Questions
 div.question-box
     display: flex
     flex-wrap: nowrap
@@ -9,6 +21,7 @@ div.question-box
         color: $blue
         font-weight: 400
         flex-basis: 80%
+    //Help Button Styles
     button.help
         flex-basis: 5%
         height: 80%
@@ -19,6 +32,7 @@ div.question-box
     span.tip
         font-size: 1rem
 
+//Information Form
 .info-box
     width: 90%
     margin-bottom: 3rem
@@ -35,10 +49,10 @@ div.question-box
 div.popover-body
     font-size: 1.3rem
 
-div.question-divider
+div.divider
     padding-bottom: 1.3rem
 
-
+//Progress Bar
 div.progress
     display: flex
     border-radius: 5rem
@@ -54,6 +68,20 @@ div.progress
         margin: auto
     .progress-bar
         background-color: $blue
+
+//Slider
+div.range-slider
+    margin: 2rem 0
+
+div[class^="makeStyles"]
+    border-radius: 1rem
+    top: 50% !important
+    left: 55% !important
+    transform: translate(-50%, -50%) !important
+    p
+        font-size: 1.3rem
+div.modal-btns
+    display: flex
 
 
 ////////Material UI Stuff

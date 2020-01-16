@@ -42,13 +42,8 @@ class Chart extends React.Component{
                     },    
                     title:{
                       display:true,
-<<<<<<< HEAD:src/components/ROI/features/Chart.jsx
-                      text: "",
-                      fontSize:27,
-=======
                       text: 'Results',
                       fontSize:25,
->>>>>>> b9f7513c37abda3f45638f2ac496b4100387e1c2:src/components/ROI/Chart.jsx
                       fontColor:'#363537'
                     },
                     legend:{

@@ -18,8 +18,9 @@ import GM from '../imgs/GM.png';
 import CBE from '../imgs/CBE.png';
 //comprehensive data strategy
 import CDS from '../imgs/CDS.png';
-import { Input } from '@material-ui/core';
 
+import ROImodal from './ROI/features/modals';
+import ROIModal from './ROI/features/modals';
 
 class Home extends React.Component {
     constructor(props){
@@ -29,57 +30,43 @@ class Home extends React.Component {
     windowAlert(){
         alert("Calculator currently under construction, please check back soon!");
       }
+      
     render() {
         return (
           <>
               <Header page="ROI Calculators"/>
                   <section className="calcs">
                       <div className="calc-row">
+                        
                           <div className="calc">
-                            <div onClick={(event) => this.props.selectProjectType('Fundraising Management')} className="ROI-icon">
-                              <img className="ROI-pic" src={FM} alt="Fundraising"/>
-                            </div>
-                            <Link exact to="/Info" className="ROI-type">Fundraising<br/>Management</Link>
+                            <ROImodal projType="Fundraising Management" projCost="50k" projImg={FM}/>
                           </div>
         
                           <div className="calc">
-                            <div onClick={(event) => this.props.selectProjectType('Program Management')} className="ROI-icon">
-                                <img className="ROI-pic" src={PM} alt="Program Management"/>
-                            </div>
-                            <Link onClick={(event) => this.props.selectProjectType('Program Management')} className="ROI-type">Program<br/>Management</Link>
+                            <ROImodal projType="Program Management" projCost="50k" projImg={PM}/>
                           </div>
         
                           <div className="calc">
-                            <div onClick={(event) => this.props.selectProjectType('Cloud-Based Document Storage')} className="ROI-icon">
-                                <img className="ROI-pic" src={CBDS} alt="Cloud-Based Document Storage"/>
-                            </div>
-                            <Link onClick={(event) => this.props.selectProjectType('Cloud-Based Document Storage')} href="#" className="ROI-type">Cloud-Based<br/>Document Storage</Link>
-                          </div>
+                            <ROImodal projType="Cloud-Based Document Storage" projCost="15k" projImg={CBDS}/>
+                           </div>
                       </div>
         
                       <br/>
         
                       <div className="calc-row">
+
                           <div className="calc">
-                            <div onClick={(event) => this.props.selectProjectType('Grant Management')} className="ROI-icon">
-                                <img className="ROI-pic" src={GM} alt="Grant Management"/>
-                            </div>
-                            <Link onClick={(event) => this.props.selectProjectType('Grant Management')} className="ROI-type">Grant<br/>Management</Link>
+                            <ROImodal projType="Grant Management" projCost="100k" projImg={GM}/>
                           </div>
         
                           <div className="calc">
-                            <div onClick={(event) => this.props.selectProjectType('Cloud Based Email')} className="ROI-icon">
-                                <img className="ROI-pic" src={CBE} alt="Cloud Based Email"/>
-                            </div>
-                            <Link onClick={(event) => this.props.selectProjectType('Cloud Based Email')} className="ROI-type">Cloud-Based<br/>Email</Link>
+                              <ROImodal projType="Cloud Based Email" projCost="10k" projImg={CBE}/>
                           </div>
         
                           <div className="calc">
-                            <div onClick={(event) => this.props.selectProjectType('Cloud Data Strategy')} className="ROI-icon">
-                                <img className="ROI-pic" src={CDS} alt="Cloud Data Stragey"/>
-                            </div>
-                            <Link onClick={(event) => this.props.selectProjectType('Cloud Data Strategy')} className="ROI-type">Comprehnesive<br/>Data Strategy</Link>
+                            <ROImodal projType="Cloud Data Strategy" projCost="50k" projImg={FM}/>
                           </div>
+
                       </div>
                   </section>
             </>

@@ -71,9 +71,8 @@ class HoursSaved extends React.Component{
                     />               
                   </div>
 
-                  <div className="question-divider">
-                    <span />    
-                  </div>  
+                  <div className="divider"/>
+                  
 
                   {/* Question 2 */}
                   <div className="question-box">
@@ -93,9 +92,9 @@ class HoursSaved extends React.Component{
                     /> 
                                   
                   </div>
-                  <div className="question-divider">
-                    <span />    
-                  </div>  
+
+                  <div className="divider"/>
+                    
                   {/* Question 3 */}
                   <div className="question-box">
                     <h1 className="question">On average, how many hours are spent monthly on adminstrative work concerning
@@ -123,17 +122,18 @@ class HoursSaved extends React.Component{
                     onChangeCommitted={ (event, value) => this.props.collectTime('3',value) }
                     />             
                   </div>
-                  <div className="question-divider">
-                    <span />    
-                  </div>  
+
+                  <div className="divider"/>
+              
                   {/* Question 4 */}
                   <div className="question-box">
                     <h1 className="question">On average, how many hours are spent monthly on tracking, reporting, and preparing
                       tax receipts annually?</h1>      
                   </div>
-                  <div className="question-divider">
-                    <span />    
-                  </div>
+
+                  <div className="divider"/>
+                
+
                   {/* Slider FOUR */}
                   <div className="range-slider">                
                   <Slider 

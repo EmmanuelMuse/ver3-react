@@ -21,8 +21,9 @@
     "react-router-scroll-top": "^0.2.1",
     "react-scripts": "^3.3.0",
     "redux": "^4.0.4",
+    "semantic-ui-react": "^0.88.2",
     "top": "^0.2.3",
-    "yarn": "^1.21.0"
+    "yarn": "^1.21.1"
   },
   "scripts": {
     "predeploy": "yarn run build",
