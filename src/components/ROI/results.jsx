@@ -139,21 +139,143 @@ class Results extends React.Component{
                             </div>
 
                         </section>
-                        <Chart
-                            name={"Hours Saved"}
-                            value={display.hoursSaved()}
-                        />
-                       
-{/*                         
-                        <Chart valueProp = {display}
-                                nameProp = {'Dollars Saved'}        
-                        />
-                       <Chart valueProp = {display}
-                            nameProp = {'Cost Per Dollar Raised'}        
-                        />
-                        <Chart valueProp = {display}
-                            nameProp = {'Clients Served'}        
-                        /> */}
+                                            {/* Hours Saved Results Graph */}
+                    <Chart 
+                    chartData={{
+                        labels: ['Hours Saved'],
+                        datasets: [
+                            //Before label bars
+                            {label:'Hours: Before',
+                            data: [parseInt(display.hoursSaved()*Math.random())],
+                            backgroundColor:['#083D77'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#083D77'],
+                            hoverBorderColor:'#000'
+                            },
+                            //After label bars
+                            {label:'Hours: After',
+                            data: [display.hoursSaved()],
+                            backgroundColor:['#7ec142'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#7ec142'],
+                            hoverBorderColor:'#000'                   
+                            }
+                        ]
+                    }}
+                    />
+                    {/* Dollars Saved Results Graph */}
+                    <Chart 
+                    chartData={{
+                        labels: ['Dollars Saved'],
+                        datasets: [
+                            //Before label bars
+                            {label:'Before',
+                            data: [parseInt(display.dollarsSaved()*(Math.random())), 0],
+                            backgroundColor:['#083D77'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#083D77'],
+                            hoverBorderColor:'#000'
+                            },
+                            //After label bars
+                            {label:'After',
+                            data: [display.dollarsSaved()],
+                            backgroundColor:['#7ec142'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#7ec142'],
+                            hoverBorderColor:'#000'                   
+                            }
+                        ]
+                    }}
+                    />
+                    {/* Cost Per Dollar Results Graph */}
+                    <Chart                
+                    chartData={{
+                        labels: ['Cost Per Dollar Raised'],
+                        datasets: [
+                            //Before label bars
+                            {label:'CPD: Before',
+                            data: [parseFloat(display.cpdr()*(Math.random())).toFixed(2), 0],
+                            backgroundColor:['#083D77'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#083D77'],
+                            hoverBorderColor:'#000'
+                            },
+                            //After label bars
+                            {label:'CPD: After',
+                            data: [display.cpdr()],
+                            backgroundColor:['#7ec142'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#7ec142'],
+                            hoverBorderColor:'#000'                   
+                            }
+                        ]
+                    }}
+                    />
+                    {/* Clients Served Results Graph */}
+                    <Chart 
+                    chartData={{
+                        labels: ['Clients Served'],
+                        datasets: [
+                            //Before label bars
+                            {label:'Before',
+                            data: [parseInt(display.clientsServed()*(Math.random())).toFixed(2), 0],
+                            backgroundColor:['#083D77'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#083D77'],
+                            hoverBorderColor:'#000'
+                            },
+                            //After label bars
+                            {label:'After',
+                            data: [display.clientsServed()],
+                            backgroundColor:['#7ec142'],
+                            barPercentage: .7,
+                            categoryPercentage: .25,
+                            borderWidth:1,
+                            borderColor:'#212121',
+                            hoverBorderWidth:3,
+                            hoverBackgroundColor: ['#7ec142'],
+                            hoverBorderColor:'#000'                   
+                            }
+                        ]
+                    }}
+                    />
+
+                    <div class="nav-button">
+                        <a href="#" download="">
+                            <button type="button"  onClick="window.print();" class="btn btn-primary">Print Results</button>
+                        </a>
+                        <div class="question-divider">
+                            <span></span>
+                        </div>
+                    </div>
                         
                 </>
         );
