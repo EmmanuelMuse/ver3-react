@@ -29,13 +29,13 @@ class Chart extends React.Component{
                             display:true,
                             ticks: {
                                 fontSize: 15,
-                                fontColor:'#363537',
-                                min: 0,                        
+                                fontColor:'#363537',                              
+                                beginAtZero: true
                             }
                         }],
                         xAxes:[{
                             ticks:{
-                                fontSize: 16,
+                                fontSize: 15,
                                 fontColor: '363537' 
                             }
                         }]
@@ -43,12 +43,12 @@ class Chart extends React.Component{
                     title:{
                       display:true,
                       text: 'Results',
-                      fontSize:25,
+                      fontSize:20,
                       fontColor:'#363537'
                     },
                     legend:{
                       display:true,
-                      position:'bottom',
+                      position:'top',
                       labels:{
                         fontColor:'#363537',
                         fontSize: 14
