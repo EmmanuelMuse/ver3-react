@@ -137,143 +137,144 @@ class Results extends React.Component{
                                     <h2 href="#" className="ROI-type">Clients Served<br /> Annually</h2>
                                 </div>
                             </div>
-
-                        </section>
-                                            {/* Hours Saved Results Graph */}
-                    <Chart 
-                    chartData={{
-                        labels: ['Hours Saved'],
-                        datasets: [
-                            //Before label bars
-                            {label:'Before',
-                            data: [display.hoursSaved()],
-                            backgroundColor:['rgba(8, 61, 119, .82)'],
-                            barPercentage: .7,
-                            categoryPercentage: .25,
-                            borderWidth:1,
-                            borderColor:'#212121',
-                            hoverBorderWidth:2,
-                            hoverBackgroundColor: ['rgba(8, 61, 119)'],
-                            hoverBorderColor:'#000'
-                            },
-                            //After label bars
-                            {label:'After: Est',
-                            // Random generated number in data field, solely to functionality of chart
-                            data: [parseInt(display.hoursSaved()*Math.random())],
-                            backgroundColor:['rgba(126, 194, 66, 0.82)'],
-                            barPercentage: .7,
-                            categoryPercentage: .25,
-                            borderWidth:1,
-                            borderColor:'#212121',
-                            hoverBorderWidth:2,
-                            hoverBackgroundColor: ['rgba(126, 194, 66)'],
-                            hoverBorderColor:'#000'                   
-                            }
-                        ]
-                    }}
-                    />
-                    {/* Dollars Saved Results Graph */}
-                    <Chart 
-                    chartData={{
-                        labels: ['Dollars Saved'],
-                        datasets: [
-                            //Before label bars
-                            {label:'Before',
-                            data: [display.dollarsSaved(), 0],
-                            backgroundColor:['rgba(8, 61, 119, .82)'],
-                            barPercentage: .7,
-                            categoryPercentage: .25,
-                            borderWidth:1,
-                            borderColor:'#212121',
-                            hoverBorderWidth:2,
-                            hoverBackgroundColor: ['rgba(8, 61, 119)'],
-                            hoverBorderColor:'#000'
-                            },
-                            //After label bars
-                            {label:'After: Est',
-                            // Random generated number in data field, solely to functionality of chart
-                            data: [parseInt(display.dollarsSaved()*(Math.random()))],
-                            backgroundColor:['rgba(126, 194, 66, 0.82)'],
-                            barPercentage: .7,
-                            categoryPercentage: .25,
-                            borderWidth:1,
-                            borderColor:'#212121',
-                            hoverBorderWidth:2,
-                            hoverBackgroundColor: ['rgba(126, 194, 66)'],
-                            hoverBorderColor:'#000'                   
-                            }
-                        ]
-                    }}
-                    />
-                    {/* Cost Per Dollar Results Graph */}
-                    <Chart                
-                    chartData={{
-                        labels: ['Cost Per Dollar Raised'],
-                        datasets: [
-                            //Before label bars
-                            {label:'CPD Before',
-                            data: [display.cpdr(), 0],
-                            backgroundColor:['rgba(8, 61, 119, .82)'],
-                            barPercentage: .7,
-                            categoryPercentage: .25,
-                            borderWidth:1,
-                            borderColor:'#212121',
-                            hoverBorderWidth:2,
-                            hoverBackgroundColor: ['rgba(8, 61, 119)'],
-                            hoverBorderColor:'#000'
-                            },
-                            //After label bars
-                            {label:'CPD After: Est',
-                            // Random generated number in data field, solely to functionality of chart
-                            data: [parseFloat(display.cpdr()*(Math.random())).toFixed(2)],
-                            backgroundColor:['rgba(126, 194, 66, 0.82)'],
-                            barPercentage: .7,
-                            categoryPercentage: .25,
-                            borderWidth:1,
-                            borderColor:'#212121',
-                            hoverBorderWidth:2,
-                            hoverBackgroundColor: ['rgba(126, 194, 66)'],
-                            hoverBorderColor:'#000'                   
-                            }
-                        ]
-                    }}
-                    />
-                    {/* Clients Served Results Graph */}
-                    <Chart 
-                    chartData={{
-                        labels: ['Clients Served'],
-                        datasets: [
-                            //Before label bars
-                            {label:'Before',
-                            data: [display.clientsServed(), 0],
-                            backgroundColor:['rgba(8, 61, 119, .82)'],
-                            barPercentage: .7,
-                            categoryPercentage: .25,
-                            borderWidth:1,
-                            borderColor:'#212121',
-                            hoverBorderWidth:2,
-                            hoverBackgroundColor: ['rgba(8, 61, 119)'],
-                            hoverBorderColor:'#000'
-                            },
-                            //After label bars
-                            {label:'After: Est',
-                            // Random generated number in data field, solely to functionality of chart
-                            data: [parseInt(display.clientsServed()*(Math.random())).toFixed(2)],
-                            backgroundColor:['rgba(126, 194, 66, 0.82)'],
-                            barPercentage: .7,
-                            categoryPercentage: .25,
-                            borderWidth:1,
-                            borderColor:'#212121',
-                            hoverBorderWidth:2,
-                            hoverBackgroundColor: ['#rgba(126, 194, 66)'],
-                            hoverBorderColor:'#000'                   
-                            }
-                        ]
-                    }}
-                    />
-
+                            
 
                         
+                                            {/* Hours Saved Results Graph */}
+                            <Chart 
+                            chartData={{
+                                labels: ['Hours Saved'],
+                                datasets: [
+                                    //Before label bars
+                                    {label:'Before',
+                                    data: [display.hoursSaved()],
+                                    backgroundColor:['rgba(8, 61, 119, .82)'],
+                                    barPercentage: .7,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['rgba(8, 61, 119)'],
+                                    hoverBorderColor:'#000'
+                                    },
+                                    //After label bars
+                                    {label:'After: Est',
+                                    // Random generated number in data field, solely to functionality of chart
+                                    data: [parseInt(display.hoursSaved()*Math.random())],
+                                    backgroundColor:['rgba(126, 194, 66, 0.82)'],
+                                    barPercentage: .7,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['rgba(126, 194, 66)'],
+                                    hoverBorderColor:'#000'                   
+                                    }
+                                ]
+                            }}
+                            />
+                            {/* Dollars Saved Results Graph */}
+                            <Chart 
+                            chartData={{
+                                labels: ['Dollars Saved'],
+                                datasets: [
+                                    //Before label bars
+                                    {label:'Before',
+                                    data: [display.dollarsSaved(), 0],
+                                    backgroundColor:['rgba(8, 61, 119, .82)'],
+                                    barPercentage: .7,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['rgba(8, 61, 119)'],
+                                    hoverBorderColor:'#000'
+                                    },
+                                    //After label bars
+                                    {label:'After: Est',
+                                    // Random generated number in data field, solely to functionality of chart
+                                    data: [parseInt(display.dollarsSaved()*(Math.random()))],
+                                    backgroundColor:['rgba(126, 194, 66, 0.82)'],
+                                    barPercentage: .7,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['rgba(126, 194, 66)'],
+                                    hoverBorderColor:'#000'                   
+                                    }
+                                ]
+                            }}
+                            />
+                            {/* Cost Per Dollar Results Graph */}
+                            <Chart                
+                            chartData={{
+                                labels: ['Cost Per Dollar Raised'],
+                                datasets: [
+                                    //Before label bars
+                                    {label:'CPD Before',
+                                    data: [display.cpdr(), 0],
+                                    backgroundColor:['rgba(8, 61, 119, .82)'],
+                                    barPercentage: .7,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['rgba(8, 61, 119)'],
+                                    hoverBorderColor:'#000'
+                                    },
+                                    //After label bars
+                                    {label:'CPD After: Est',
+                                    // Random generated number in data field, solely to functionality of chart
+                                    data: [parseFloat(display.cpdr()*(Math.random())).toFixed(2)],
+                                    backgroundColor:['rgba(126, 194, 66, 0.82)'],
+                                    barPercentage: .7,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['rgba(126, 194, 66)'],
+                                    hoverBorderColor:'#000'                   
+                                    }
+                                ]
+                            }}
+                            />
+                            {/* Clients Served Results Graph */}
+                            <Chart 
+                            chartData={{
+                                labels: ['Clients Served'],
+                                datasets: [
+                                    //Before label bars
+                                    {label:'Before',
+                                    data: [display.clientsServed(), 0],
+                                    backgroundColor:['rgba(8, 61, 119, .82)'],
+                                    barPercentage: .7,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['rgba(8, 61, 119)'],
+                                    hoverBorderColor:'#000'
+                                    },
+                                    //After label bars
+                                    {label:'After: Est',
+                                    // Random generated number in data field, solely to functionality of chart
+                                    data: [parseInt(display.clientsServed()*(Math.random())).toFixed(2)],
+                                    backgroundColor:['rgba(126, 194, 66, 0.82)'],
+                                    barPercentage: .7,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['#rgba(126, 194, 66)'],
+                                    hoverBorderColor:'#000'                   
+                                    }
+                                ]
+                            }}
+                            />
+
+
+                    </section>     
                 </>
         );
     }
