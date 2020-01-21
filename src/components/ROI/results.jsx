@@ -160,7 +160,7 @@ class Results extends React.Component{
                                     //After label bars
                                     {label:'After: Est',
                                     // Random generated number in data field, solely to functionality of chart
-                                    data: [parseInt(display.hoursSaved()*Math.random())],
+                                    data: [parseInt(display.hoursSaved()*Math.random() + display.hoursSaved())],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .7,
                                     categoryPercentage: .25,
@@ -193,7 +193,7 @@ class Results extends React.Component{
                                     //After label bars
                                     {label:'After: Est',
                                     // Random generated number in data field, solely to functionality of chart
-                                    data: [parseInt(display.dollarsSaved()*(Math.random()))],
+                                    data: [parseInt(display.dollarsSaved()*(Math.random()) + display.dollarsSaved())],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .7,
                                     categoryPercentage: .25,
@@ -226,7 +226,7 @@ class Results extends React.Component{
                                     //After label bars
                                     {label:'CPD After: Est',
                                     // Random generated number in data field, solely to functionality of chart
-                                    data: [parseFloat(display.cpdr()*(Math.random())).toFixed(2)],
+                                    data: [parseFloat(display.cpdr()*(Math.random())  + display.cpdr() ).toFixed(2)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .7,
                                     categoryPercentage: .25,
@@ -259,7 +259,7 @@ class Results extends React.Component{
                                     //After label bars
                                     {label:'After: Est',
                                     // Random generated number in data field, solely to functionality of chart
-                                    data: [parseInt(display.clientsServed()*(Math.random())).toFixed(2)],
+                                    data: [parseInt(display.clientsServed()*(Math.random()) + display.clientsServed()).toFixed(2)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .7,
                                     categoryPercentage: .25,
