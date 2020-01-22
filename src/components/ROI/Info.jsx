@@ -6,7 +6,7 @@ import * as actions from '../../actions/inputActions';
 //imported components
 import Header from '../Header';
 import { Link } from 'react-router-dom';
-import { TextField } from '@material-ui/core';
+import { TextField} from '@material-ui/core';
 
 
 

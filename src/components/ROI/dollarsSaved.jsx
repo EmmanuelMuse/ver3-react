@@ -105,6 +105,7 @@ class DollarsSaved extends React.Component {
                                 id="standard-number"
                                 label="Expenses"
                                 type="number"
+                                defaultValue='0'
                                 InputLabelProps={{ shrink: true }}
                                 margin="normal"
                                 variant="filled"
@@ -121,6 +122,7 @@ class DollarsSaved extends React.Component {
                                 id="standard-number"
                                 label="Revenue"
                                 type="number"
+                                defaultValue='0'
                                 InputLabelProps={{ shrink: true }}
                                 margin="normal"
                                 variant="filled"

@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 
 // this component is connected with the redux store
 //data from the store is mapped from the props
-class Question extends React.Component{
+class sliderQuestion extends React.Component{
     
         Props = this.props;
     render(){
@@ -40,4 +40,4 @@ class Question extends React.Component{
     }
 }
 
-export default Question;
+export default sliderQuestion;

@@ -1,8 +1,5 @@
 import React from 'react';
 import { Bar} from 'react-chartjs-2';
-import {connect} from 'react-redux';
-import * as actions from '../../../actions/mathActions';
-import { Tooltip } from 'chart.js';
 
 
 

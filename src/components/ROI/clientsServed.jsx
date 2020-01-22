@@ -27,6 +27,7 @@ class clientsServed extends React.Component{
                                     id="standard-number"
                                     label="Budget"
                                     type="number"
+                                    defaultValue='0'
                                     InputLabelProps={{ shrink: true }}
                                     margin="normal"
                                     variant="filled"
@@ -40,7 +41,7 @@ class clientsServed extends React.Component{
                                 <TextField
                                     id="standard-number"
                                     label="Unique Clients"
-                                    
+                                    defaultValue='0'
                                     type="number"
                                     InputLabelProps={{ shrink: true }}
                                     margin="normal"

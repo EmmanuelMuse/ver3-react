@@ -16,7 +16,7 @@ class Header extends React.Component {
               <div className="page-info">
                   <h1 className="page-header">{this.props.page}</h1>
                   <i class="fas fa-angle-double-right"></i>
-                  <h2 className="project-Identifer">{this.props.info.projectType}</h2>
+                  <h1 className="project-Identifer">{this.props.info.projectType}</h1>
               </div>
               
           </div>

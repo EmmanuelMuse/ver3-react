@@ -1,7 +1,7 @@
 //React and Redux stuff
 import React from 'react';
 import Header from '../Header';
-import {connect, useStore} from 'react-redux';
+import {connect } from 'react-redux';
 
 //import components
 // import {PDFDownloadLink, Document, Page} from '@react-pdf/renderer'
