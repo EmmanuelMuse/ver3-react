@@ -52,7 +52,7 @@ class DollarsSaved extends React.Component {
                           <form className="form-box">
                               {/* Question 1 */}
                               <div className="question-box">
-                                <h1 className="question">On average, how much revenue is generated from donations monthly?</h1>
+                                <h1 className="question">On average, how much revenue is generated from donations annually?</h1>
                               </div>
                               {/* Slider ONE */}
                               <div className="range-slider dollars">
@@ -67,7 +67,7 @@ class DollarsSaved extends React.Component {
 
                               {/* Question 2 */}
                               <div className="question-box">
-                                <h1 className="question">On average, what is the value of grant revenue won by your organization monthly?</h1>
+                                <h1 className="question">On average, what is the value of grant revenue won by your organization annually?</h1>
                               </div>
                               {/* Slider Two */}
                               <div className="range-slider dollars">
@@ -83,7 +83,7 @@ class DollarsSaved extends React.Component {
                               {/* Question 3 */}
                               <div className="question-box">
                                 <h1 className="question">On average, how much money is spent on fundraising
-                                  management systems monthly (including licensing, hosting, and support fees)?</h1>
+                                  management systems annually (including licensing, hosting, and support fees)?</h1>
                               </div>
                               {/* Slider Three */}
                               <div className="range-slider dollars">

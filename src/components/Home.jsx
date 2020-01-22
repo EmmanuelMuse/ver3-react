@@ -36,11 +36,11 @@ class Home extends React.Component {
 
                       <div className="calc-row">
                           <div className="calc">
-                            <ROImodal projType="Fundraising Management" projCost="50k" projImg={FM}/>
+                            <ROImodal projType="Fundraising Management" projCost="$50k" projImg={FM}/>
                           </div>
         
                           <div className="calc">
-                            <ROImodal projType="Program Management" projCost="50k" projImg={PM}/>
+                            <ROImodal projType="Program Management" projCost="$50k" projImg={PM}/>
                           </div>
         
                           <div className="calc">
@@ -52,11 +52,11 @@ class Home extends React.Component {
         
                       <div className="calc-row">
                           <div className="calc">
-                            <ROImodal projType="Grant Management" projCost="100k" projImg={GM}/>
+                            <ROImodal projType="Grant Management" projCost="$100k" projImg={GM}/>
                           </div>
         
                           <div className="calc">
-                              <ROImodal projType="Cloud Based Email" projCost="10k" projImg={CBE}/>
+                              <ROImodal projType="Cloud Based Email" projCost="$10k" projImg={CBE}/>
                           </div>
         
                           <div className="calc">

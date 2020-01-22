@@ -21,7 +21,7 @@ class _roiSliderQ extends React.Component(){
                     marks={this.props.marks}
                     step={null}
                     min={this.props.minVal} max={this.props.maxVal}
-                    onChangeCommitted={ (event, value) => this.props.collectTime(this.props.,value) }
+                    onChangeCommitted={ (event, value) => this.props.collectTime(this.props.value) }
                     />               
                 </div>
             </>
