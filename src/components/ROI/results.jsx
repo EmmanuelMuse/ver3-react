@@ -28,45 +28,42 @@ class Results extends React.Component{
         
     }
 
-    componentWillMount(){
+    componentDidMount(){
         this.getChartData();
     }
 
-    currencyFormat(num) {
-        return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    checkIfNaN(value){
+        if (isNaN(value)){
+            return "- -"
+        };
+        return value
     }
 
     getChartData(){
         this.setState({
+            //chart template
             chartData:{
-                labels: ['Graph1'],
+                labels: ['Hours Saved','Money Saved', 'Cost Per Collar Raised', 'Clients Served'],
                 datasets: [
                     //Before label bars
                     {label:'Before',
-                    data: [100],
-                    backgroundColor:['rgba(8, 61, 119, .82)'],
-                    barPercentage: .25,
-                    categoryPercentage: .8,
-                    maxBarThickness: .8,
+                    data: [],
+                    backgroundColor:['#DA4167', '#DA4167', '#DA4167', '#DA4167'],
                     borderWidth:1,
-                    borderColor:'#212121',
-                    hoverBorderWidth:2,
-                    hoverBackgroundColor: ['rgba(8, 61, 119)'],
+                    borderColor:'#777',
+                    hoverBorderWidth:3,
                     hoverBorderColor:'#000'
                     },
                     //After label bars
                     {label:'After',
-                    data: [4, 0],
-                    backgroundColor:['rgba(126, 194, 66, 0.82)'],
-                    barPercentage: .2,
-                    categoryPercentage: .5,
-                    maxBarThickness: .3,
+                    data: [],
+                    backgroundColor:['#083D77', '#083D77', '#083D77', '#083D77'],
                     borderWidth:1,
-                    borderColor:'#212121',
-                    hoverBorderWidth:2,
-                    hoverBackgroundColor: ['rgba(126, 194, 66)'],
-                    hoverBorderColor:'#000'                   
+                    borderColor:'#777',
+                    hoverBorderWidth:3,
+                    hoverBorderColor:'#000',                   
                     }
+                    
                 ]                
             }
         });
@@ -74,9 +71,7 @@ class Results extends React.Component{
 
 
     render(){
-        console.log(this.props)
         const {display} = this.props;
-        console.log(display.dollarsSaved())
         return(
             <>
                 <Header page="Results" />
@@ -98,14 +93,14 @@ class Results extends React.Component{
                                 </div>
 
                                 <div className="calc">
-                                    <img className="ROI-pic" src={CPDR} alt="Cost per Dollar" />
-                                    <h2 className="result">{display.cpdr()}</h2>
+                                    <img className="ROI-pic" src={CPDR} alt="Cost Per Dollar" />
+                                    <h2 className="result">{this.checkIfNaN(display.cpdr())}</h2>
                                     <h2 href="#" className="ROI-type">Cost per Dollar<br />Raised</h2>
                                 </div>
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={CS} alt="Clients Served" />
-                                    <h2 className="result">{display.clientsServed()}</h2>
+                                    <h2 className="result">{this.checkIfNaN(display.clientsServed())}</h2>
                                     <h2 href="#" className="ROI-type">Clients<br />Served</h2>
                                 </div>
                             </div>
@@ -115,25 +110,25 @@ class Results extends React.Component{
                             <div className="calc-row">
                                 <div className="calc">
                                     <img className="ROI-pic" src={HS} alt="Hours Saved" />
-                                    <h2 className="result">??</h2>
+                                    <h2 className="result">{this.checkIfNaN()}</h2>
                                     <h2 href="#" className="ROI-type">Hours Spent<br />Annually</h2>
                                 </div>
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={DS} alt="Dollars Saved" />
-                                    <h2 className="result">??</h2>
+                                    <h2 className="result">{this.checkIfNaN()}</h2>
                                     <h2 href="#" className="ROI-type">Dollars Spent<br />Annually</h2>
                                 </div>
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={CPDR} alt="Cost per Dollar" />
-                                    <h2 className="result">??</h2>
+                                    <h2 className="result">{this.checkIfNaN()}</h2>
                                     <h2 href="#" className="ROI-type">Cost per Dollar<br />Raised</h2>
                                 </div>
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={CS} alt="Clients Served" />
-                                    <h2 className="result">??</h2>
+                                    <h2 className="result">{this.checkIfNaN()}</h2>
                                     <h2 href="#" className="ROI-type">Clients Served<br /> Annually</h2>
                                 </div>
                             </div>
@@ -149,7 +144,7 @@ class Results extends React.Component{
                                     {label:'Before',
                                     data: [display.hoursSaved()],
                                     backgroundColor:['rgba(8, 61, 119, .82)'],
-                                    barPercentage: .7,
+                                    barPercentage: .9,
                                     categoryPercentage: .25,
                                     borderWidth:1,
                                     borderColor:'#212121',
@@ -160,9 +155,9 @@ class Results extends React.Component{
                                     //After label bars
                                     {label:'After: Est',
                                     // Random generated number in data field, solely to functionality of chart
-                                    data: [parseInt(display.hoursSaved()*Math.random() + display.hoursSaved())],
+                                    data: [parseInt(display.hoursSaved() * Math.random() + display.hoursSaved())],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
-                                    barPercentage: .7,
+                                    barPercentage: .9,
                                     categoryPercentage: .25,
                                     borderWidth:1,
                                     borderColor:'#212121',
@@ -180,9 +175,9 @@ class Results extends React.Component{
                                 datasets: [
                                     //Before label bars
                                     {label:'Before',
-                                    data: [display.dollarsSaved(), 0],
+                                    data: [display.dollarsSaved()],
                                     backgroundColor:['rgba(8, 61, 119, .82)'],
-                                    barPercentage: .7,
+                                    barPercentage: .9,
                                     categoryPercentage: .25,
                                     borderWidth:1,
                                     borderColor:'#212121',
@@ -195,7 +190,7 @@ class Results extends React.Component{
                                     // Random generated number in data field, solely to functionality of chart
                                     data: [parseInt(display.dollarsSaved()*(Math.random()) + display.dollarsSaved())],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
-                                    barPercentage: .7,
+                                    barPercentage: .9,
                                     categoryPercentage: .25,
                                     borderWidth:1,
                                     borderColor:'#212121',
@@ -213,9 +208,9 @@ class Results extends React.Component{
                                 datasets: [
                                     //Before label bars
                                     {label:'CPD Before',
-                                    data: [display.cpdr(), 0],
+                                    data: [display.cpdr()],
                                     backgroundColor:['rgba(8, 61, 119, .82)'],
-                                    barPercentage: .7,
+                                    barPercentage: .9,
                                     categoryPercentage: .25,
                                     borderWidth:1,
                                     borderColor:'#212121',
@@ -226,9 +221,9 @@ class Results extends React.Component{
                                     //After label bars
                                     {label:'CPD After: Est',
                                     // Random generated number in data field, solely to functionality of chart
-                                    data: [parseFloat(display.cpdr()*(Math.random())  + display.cpdr() ).toFixed(2)],
+                                    data: [parseFloat(display.cpdr()*(Math.random()) + display.cpdr()).toFixed(2)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
-                                    barPercentage: .7,
+                                    barPercentage: .9,
                                     categoryPercentage: .25,
                                     borderWidth:1,
                                     borderColor:'#212121',
@@ -246,9 +241,9 @@ class Results extends React.Component{
                                 datasets: [
                                     //Before label bars
                                     {label:'Before',
-                                    data: [display.clientsServed(), 0],
+                                    data: [display.clientsServed()],
                                     backgroundColor:['rgba(8, 61, 119, .82)'],
-                                    barPercentage: .7,
+                                    barPercentage: .9,
                                     categoryPercentage: .25,
                                     borderWidth:1,
                                     borderColor:'#212121',
@@ -261,7 +256,7 @@ class Results extends React.Component{
                                     // Random generated number in data field, solely to functionality of chart
                                     data: [parseInt(display.clientsServed()*(Math.random()) + display.clientsServed()).toFixed(2)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
-                                    barPercentage: .7,
+                                    bbarPercentage: .9,
                                     categoryPercentage: .25,
                                     borderWidth:1,
                                     borderColor:'#212121',
@@ -272,8 +267,6 @@ class Results extends React.Component{
                                 ]
                             }}
                             />
-
-
                     </section>     
                 </>
         );
