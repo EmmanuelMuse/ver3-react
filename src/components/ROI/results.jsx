@@ -1,7 +1,7 @@
 //React and Redux stuff
 import React from 'react';
 import Header from '../Header';
-import {connect, useStore} from 'react-redux';
+import {connect } from 'react-redux';
 
 //import components
 // import {PDFDownloadLink, Document, Page} from '@react-pdf/renderer'
@@ -144,16 +144,7 @@ class Results extends React.Component{
                             value={display.hoursSaved()}
                         />
                        
-{/*                         
-                        <Chart valueProp = {display}
-                                nameProp = {'Dollars Saved'}        
-                        />
-                       <Chart valueProp = {display}
-                            nameProp = {'Cost Per Dollar Raised'}        
-                        />
-                        <Chart valueProp = {display}
-                            nameProp = {'Clients Served'}        
-                        /> */}
+
                         
                 </>
         );
