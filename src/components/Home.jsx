@@ -60,7 +60,7 @@ class Home extends React.Component {
                           </div>
         
                           <div className="calc">
-                            <ROImodal projType="Cloud Data Strategy" projCost="50k" projImg={CDS}/>
+                            <ROImodal projType="Data Strategy" projCost="50k" projImg={CDS}/>
                           </div>
                       </div>
 

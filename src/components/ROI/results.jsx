@@ -78,6 +78,7 @@ class Results extends React.Component{
                         
                         <section className="calcs">
                             {/* Row One */}
+                            <h1 className="rHeader">Pre Project ROI</h1>
                             {/* <h1 className="rHeader">Your current Numbers</h1> */}
                             <div className="calc-row">
                                 <div className="calc">
@@ -106,7 +107,7 @@ class Results extends React.Component{
                             </div>
 
                             {/* Row Two */}
-                            <h1 className="rHeader">ROI 1 Year Results</h1>
+                            <h1 className="rHeader">Post Anticipated ROI</h1>
                             <div className="calc-row">
                                 <div className="calc">
                                     <img className="ROI-pic" src={HS} alt="Hours Spent" />
