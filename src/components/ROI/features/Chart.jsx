@@ -34,7 +34,7 @@ class Chart extends React.Component{
                                     axis.max *= 1.5;
                                 },
                                 callback: function(value, index, values) {
-                                    if(parseInt(value) >= 1000 || value < 1){
+                                    if(parseInt(value) >= 1000 || (value < 1 && value !== 0)){
                                     return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                                     } 
                                     else if (1 !== value && value !== 0){

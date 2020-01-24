@@ -171,7 +171,7 @@ class Results extends React.Component{
                             <Chart 
                             chartData={{
                                 //Labor Costs is based on Hours values and multiplied by a fixed rate of $30 per hour
-                                labels: ['Labor Costs'],
+                                labels: ['Labor Costs of Hours Spent'],
                                 datasets: [
                                     //Before label bars
                                     {label:'Before',
