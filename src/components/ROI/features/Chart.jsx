@@ -28,7 +28,25 @@ class Chart extends React.Component{
                             ticks: {
                                 fontSize: 15,
                                 fontColor:'#363537',                              
-                                beginAtZero: true
+                                beginAtZero: true,
+                                
+                                afterDataLimits: function(axis) {
+                                    axis.max *= 1.5;
+                                },
+                                callback: function(value, index, values) {
+                                    if(parseInt(value) >= 1000 || value < 1){
+                                    return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                    } 
+                                    else if (1 !== value && value !== 0){
+                                        if(value < 1){
+                                            return value.toFixed(2);
+                                        }
+                                        return parseInt(value);
+                                    } 
+                                    else {
+                                        return value;
+                                    }
+                                }
                             }
                         }],
                         xAxes:[{
@@ -60,9 +78,16 @@ class Chart extends React.Component{
                         bodyFontSize: 13,
                         bodySpacing: 7,
                         footerFontSize: 13,
-
-                        //custom callback function to display percentage change on tooltip footer
-                        callbacks: {                             
+                    //custom callback function to display percentage change on tooltip footer
+                        callbacks: {  
+                            label: function(tooltipItem, data) {
+                                var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] 
+                                if(parseInt(value) >= 1000){
+                                    return data.datasets[tooltipItem.datasetIndex].label + ": " + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                }else{
+                                    return data.datasets[tooltipItem.datasetIndex].label + ": " + value;
+                                }
+                            },                           
 						    footer: function(tooltipItems, data) {
                                 var percentChange = 0;
                                 var currentArray = [];

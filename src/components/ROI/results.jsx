@@ -81,7 +81,7 @@ class Results extends React.Component{
                             {/* <h1 className="rHeader">Your current Numbers</h1> */}
                             <div className="calc-row">
                                 <div className="calc">
-                                    <img className="ROI-pic" src={HS} alt="Hours Saved" />
+                                    <img className="ROI-pic" src={HS} alt="Hours Spent" />
                                     <h2 className="result">{display.hoursSaved()}</h2>
                                     <h2 href="#" className="ROI-type">Hours<br />Saved</h2>
                                 </div>
@@ -95,7 +95,7 @@ class Results extends React.Component{
                                 <div className="calc">
                                     <img className="ROI-pic" src={CPDR} alt="Cost Per Dollar" />
                                     <h2 className="result">{this.checkIfNaN(display.cpdr())}</h2>
-                                    <h2 href="#" className="ROI-type">Cost per Dollar<br />Raised</h2>
+                                    <h2 href="#" className="ROI-type">Cost per Dollar</h2>
                                 </div>
 
                                 <div className="calc">
@@ -109,36 +109,34 @@ class Results extends React.Component{
                             <h1 className="rHeader">ROI 1 Year Results</h1>
                             <div className="calc-row">
                                 <div className="calc">
-                                    <img className="ROI-pic" src={HS} alt="Hours Saved" />
-                                    <h2 className="result">{this.checkIfNaN()}</h2>
+                                    <img className="ROI-pic" src={HS} alt="Hours Spent" />
+                                    <h2 className="result">{this.checkIfNaN(display.hoursSaved() * .5)}</h2>
                                     <h2 href="#" className="ROI-type">Hours Spent<br />Annually</h2>
                                 </div>
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={DS} alt="Dollars Saved" />
-                                    <h2 className="result">{this.checkIfNaN()}</h2>
+                                    <h2 className="result">${((display.dollarsSaved() * 1.25).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'))}</h2>
                                     <h2 href="#" className="ROI-type">Dollars Spent<br />Annually</h2>
                                 </div>
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={CPDR} alt="Cost per Dollar" />
-                                    <h2 className="result">{this.checkIfNaN()}</h2>
-                                    <h2 href="#" className="ROI-type">Cost per Dollar<br />Raised</h2>
+                                    <h2 className="result">{this.checkIfNaN((display.cpdr() * .75).toFixed(2))}</h2>
+                                    <h2 href="#" className="ROI-type">Cost per Dollar</h2>
                                 </div>
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={CS} alt="Clients Served" />
-                                    <h2 className="result">{this.checkIfNaN()}</h2>
+                                    <h2 className="result">{this.checkIfNaN(parseInt(display.clientsServed() * 1.25))}</h2>
                                     <h2 href="#" className="ROI-type">Clients Served<br /> Annually</h2>
                                 </div>
                             </div>
-                            
-
-                        
-                                            {/* Hours Saved Results Graph */}
+                                      
+                            {/* Hours Saved Results Graph */}
                             <Chart 
                             chartData={{
-                                labels: ['Hours Saved'],
+                                labels: ['Hours Spent'],
                                 datasets: [
                                     //Before label bars
                                     {label:'Before',
@@ -155,7 +153,7 @@ class Results extends React.Component{
                                     //After label bars
                                     {label:'After: Est',
                                     // Random generated number in data field, solely to functionality of chart
-                                    data: [parseInt(display.hoursSaved() * Math.random() + display.hoursSaved())],
+                                    data: [display.hoursSaved() * .5],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .9,
                                     categoryPercentage: .25,
@@ -168,6 +166,43 @@ class Results extends React.Component{
                                 ]
                             }}
                             />
+
+                            <Chart 
+                            chartData={{
+                                //Labor Costs is based on Hours values and multiplied by a fixed rate of $30 per hour
+                                labels: ['Labor Costs'],
+                                datasets: [
+                                    //Before label bars
+                                    {label:'Before',
+                                    data: [display.hoursSaved() * 30.00],
+                                    backgroundColor:['rgba(8, 61, 119, .82)'],
+                                    barPercentage: .9,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['rgba(8, 61, 119)'],
+                                    hoverBorderColor:'#000'
+                                    },
+                                    //After label bars
+                                    {label:'After: Est',
+                                    // Random generated number in data field, solely to functionality of chart
+                                    data: [(display.hoursSaved() * .5) * 30.00],
+                                    backgroundColor:['rgba(126, 194, 66, 0.82)'],
+                                    barPercentage: .9,
+                                    categoryPercentage: .25,
+                                    borderWidth:1,
+                                    borderColor:'#212121',
+                                    hoverBorderWidth:2,
+                                    hoverBackgroundColor: ['rgba(126, 194, 66)'],
+                                    hoverBorderColor:'#000'                   
+                                    }
+                                ]
+                            }}
+                            />
+
+
+
                             {/* Dollars Saved Results Graph */}
                             <Chart 
                             chartData={{
@@ -187,8 +222,8 @@ class Results extends React.Component{
                                     },
                                     //After label bars
                                     {label:'After: Est',
-                                    // Random generated number in data field, solely to functionality of chart
-                                    data: [parseInt(display.dollarsSaved()*(Math.random()) + display.dollarsSaved())],
+                                    
+                                    data: [parseInt(display.dollarsSaved() * 1.25)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .9,
                                     categoryPercentage: .25,
@@ -204,10 +239,10 @@ class Results extends React.Component{
                             {/* Cost Per Dollar Results Graph */}
                             <Chart                
                             chartData={{
-                                labels: ['Cost Per Dollar Raised'],
+                                labels: ['Cost Per Dollar'],
                                 datasets: [
                                     //Before label bars
-                                    {label:'CPD Before',
+                                    {label:'Before',
                                     data: [display.cpdr()],
                                     backgroundColor:['rgba(8, 61, 119, .82)'],
                                     barPercentage: .9,
@@ -219,9 +254,9 @@ class Results extends React.Component{
                                     hoverBorderColor:'#000'
                                     },
                                     //After label bars
-                                    {label:'CPD After: Est',
+                                    {label:'After: Est',
                                     // Random generated number in data field, solely to functionality of chart
-                                    data: [parseFloat(display.cpdr()*(Math.random()) + display.cpdr()).toFixed(2)],
+                                    data: [parseFloat(display.cpdr() * .75).toFixed(2)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .9,
                                     categoryPercentage: .25,
@@ -254,7 +289,7 @@ class Results extends React.Component{
                                     //After label bars
                                     {label:'After: Est',
                                     // Random generated number in data field, solely to functionality of chart
-                                    data: [parseInt(display.clientsServed()*(Math.random()) + display.clientsServed()).toFixed(2)],
+                                    data: [parseInt(display.clientsServed() * 1.25)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     bbarPercentage: .9,
                                     categoryPercentage: .25,
