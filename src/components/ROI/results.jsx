@@ -153,7 +153,6 @@ class Results extends React.Component{
                                     },
                                     //After label bars
                                     {label:'After: Est',
-                                    // Random generated number in data field, solely to functionality of chart
                                     data: [display.hoursSaved() * .5],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .9,
@@ -187,7 +186,6 @@ class Results extends React.Component{
                                     },
                                     //After label bars
                                     {label:'After: Est',
-                                    // Random generated number in data field, solely to functionality of chart
                                     data: [(display.hoursSaved() * .5) * 30.00],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .9,
@@ -201,8 +199,6 @@ class Results extends React.Component{
                                 ]
                             }}
                             />
-
-
 
                             {/* Dollars Saved Results Graph */}
                             <Chart 
@@ -223,7 +219,6 @@ class Results extends React.Component{
                                     },
                                     //After label bars
                                     {label:'After: Est',
-                                    
                                     data: [parseInt(display.dollarsSaved() * 1.25)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .9,
@@ -256,7 +251,6 @@ class Results extends React.Component{
                                     },
                                     //After label bars
                                     {label:'After: Est',
-                                    // Random generated number in data field, solely to functionality of chart
                                     data: [parseFloat(display.cpdr() * .75).toFixed(2)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     barPercentage: .9,
@@ -270,6 +264,7 @@ class Results extends React.Component{
                                 ]
                             }}
                             />
+
                             {/* Clients Served Results Graph */}
                             <Chart 
                             chartData={{
@@ -289,7 +284,6 @@ class Results extends React.Component{
                                     },
                                     //After label bars
                                     {label:'After: Est',
-                                    // Random generated number in data field, solely to functionality of chart
                                     data: [parseInt(display.clientsServed() * 1.25)],
                                     backgroundColor:['rgba(126, 194, 66, 0.82)'],
                                     bbarPercentage: .9,
@@ -297,7 +291,7 @@ class Results extends React.Component{
                                     borderWidth:1,
                                     borderColor:'#212121',
                                     hoverBorderWidth:2,
-                                    hoverBackgroundColor: ['#rgba(126, 194, 66)'],
+                                    hoverBackgroundColor: ['rgba(126, 194, 66)'],
                                     hoverBorderColor:'#000'                   
                                     }
                                 ]
