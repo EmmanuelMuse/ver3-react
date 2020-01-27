@@ -84,13 +84,13 @@ class Results extends React.Component{
                                 <div className="calc">
                                     <img className="ROI-pic" src={HS} alt="Hours Spent" />
                                     <h2 className="result">{display.hoursSaved()}</h2>
-                                    <h2 href="#" className="ROI-type">Hours<br />Saved</h2>
+                                    <h2 href="#" className="ROI-type">Hours<br />Spent</h2>
                                 </div>
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={DS} alt="Dollars Saved" />
                                     <h2 className="result">${(display.dollarsSaved().toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'))}</h2>
-                                    <h2 href="#" className="ROI-type">Dollars<br />Saved</h2>
+                                    <h2 href="#" className="ROI-type">Dollars<br />Spent</h2>
                                 </div>
 
                                 <div className="calc">
@@ -112,13 +112,13 @@ class Results extends React.Component{
                                 <div className="calc">
                                     <img className="ROI-pic" src={HS} alt="Hours Spent" />
                                     <h2 className="result">{this.checkIfNaN(display.hoursSaved() * .5)}</h2>
-                                    <h2 href="#" className="ROI-type">Hours Spent<br />Annually</h2>
+                                    <h2 href="#" className="ROI-type">Hours<br/>Saved</h2>
                                 </div>
 
                                 <div className="calc">
                                     <img className="ROI-pic" src={DS} alt="Dollars Saved" />
                                     <h2 className="result">${((display.dollarsSaved() * 1.25).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'))}</h2>
-                                    <h2 href="#" className="ROI-type">Dollars Spent<br />Annually</h2>
+                                    <h2 href="#" className="ROI-type">Dollars<br />Saved</h2>
                                 </div>
 
                                 <div className="calc">
@@ -137,7 +137,7 @@ class Results extends React.Component{
                             {/* Hours Saved Results Graph */}
                             <Chart 
                             chartData={{
-                                labels: ['Hours Spent'],
+                                labels: ['Hours Spent/Saved'],
                                 datasets: [
                                     //Before label bars
                                     {label:'Before',
@@ -170,7 +170,7 @@ class Results extends React.Component{
                             <Chart 
                             chartData={{
                                 //Labor Costs is based on Hours values and multiplied by a fixed rate of $30 per hour
-                                labels: ['Labor Costs of Hours Spent'],
+                                labels: ['Dollars Saved Through Hours Saving'],
                                 datasets: [
                                     //Before label bars
                                     {label:'Before',
@@ -203,7 +203,7 @@ class Results extends React.Component{
                             {/* Dollars Saved Results Graph */}
                             <Chart 
                             chartData={{
-                                labels: ['Dollars Saved'],
+                                labels: ['Dollars Spent/Saved'],
                                 datasets: [
                                     //Before label bars
                                     {label:'Before',
